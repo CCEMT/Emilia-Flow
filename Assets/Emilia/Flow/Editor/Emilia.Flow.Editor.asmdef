@@ -1,0 +1,32 @@
+{
+    "name": "Emilia.Flow.Editor",
+    "rootNamespace": "Emilia.Flow.Editor",
+    "references": [
+        "GUID:b56a80d637f16264186fc4837331915e",
+        "GUID:67ae2b7a2b645fa41be54e048c8de6f2",
+        "GUID:b161c419d3a677d499b5e6e5562d8105",
+        "GUID:75e104de4c9984d4885cb52da91afec5",
+        "GUID:9545ec3cc66453f42a45fa6837e482b4",
+        "GUID:680baa139d258b7cd1286ae6997dd719",
+        "GUID:1b6b29427dc85403c316475c7068fc50",
+        "GUID:2fb5cf31e708b65c6cd386829ff94feb",
+        "GUID:ffb700c0d477e7cecb82a655db56ffbd",
+        "GUID:b2621ed9809523852c40dfbc7bd87a56",
+        "GUID:60589634cd8c5134c4f50388f1b1595b",
+        "GUID:478a2357cc57436488a56e564b08d223",
+        "GUID:d9cefae20c909d449a8545e0c915e664",
+        "GUID:c456a771040151a47ba4531eaf18d92e",
+        "GUID:675faffc43b802643840daeac80421da"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

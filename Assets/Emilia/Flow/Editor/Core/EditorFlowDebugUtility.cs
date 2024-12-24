@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace Emilia.Flow.Editor
 {
@@ -11,7 +10,6 @@ namespace Emilia.Flow.Editor
 
     public static class EditorFlowDebugUtility
     {
-        [UsedImplicitly]
         public static void SetState(FlowNode node, bool isDebug)
         {
             int uid = node.graph.uid;
@@ -29,7 +27,6 @@ namespace Emilia.Flow.Editor
             }
         }
 
-        [UsedImplicitly]
         public static void Ping(FlowNode node, string message)
         {
             EditorFlowDebugPingMessage pingMessage = new EditorFlowDebugPingMessage();

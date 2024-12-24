@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <OutputPath>../../</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <OutputPath>../../</OutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.9.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="SourceGeneratorAttributes">
+            <HintPath>..\..\netstandard2.0\SourceGeneratorAttributes.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+</Project>

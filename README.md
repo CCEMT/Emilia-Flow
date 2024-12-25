@@ -1,6 +1,6 @@
 # Emilia-Flow
 
-Emilia-Flow是基于Emilia-NodeEditor实现的Unity流图节点编辑器
+Emilia-Flow是基于[Emilia-NodeEditor](https://github.com/CCEMT/Emilia-NodeEditor)实现的Unity流图节点编辑器
 
 ![](./doc/flow-image.png)
 
@@ -14,6 +14,7 @@ Emilia-Flow是基于Emilia-NodeEditor实现的Unity流图节点编辑器
 
 # 示例
 ~~~
+//FlowNodeMenu为菜单特性
 [FlowNodeMenu("Test"), Serializable]
 public class TestNodeAsset : TestBaseNodeAsset<TestNode>
 {
@@ -117,7 +118,7 @@ Odin版本：3.1.2+
 
 以下为例子中的实现
 
-### 创建编辑器文件flowLoader
+### 创建编辑器文件
 
 ~~~
 [CreateAssetMenu(menuName = "Emilia/Statescript/EditorStatescriptAsset", fileName = "EditorStatescriptAsset")]

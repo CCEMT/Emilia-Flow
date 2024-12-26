@@ -2,6 +2,9 @@
 
 namespace Emilia.Flow.Attributes
 {
+    /// <summary>
+    /// 端口颜色
+    /// </summary>
     public class FlowPortColorAttribute : Attribute
     {
         public float r;

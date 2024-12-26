@@ -49,22 +49,74 @@ namespace Emilia.Flow
         private Dictionary<int, FlowNode> _nodeById = new Dictionary<int, FlowNode>();
         private Dictionary<int, FlowEdge> _edgeById = new Dictionary<int, FlowEdge>();
 
+        /// <summary>
+        /// 所有Node
+        /// </summary>
         public IReadOnlyList<FlowNode> nodes => this._nodes;
+
+        /// <summary>
+        /// 所有Edge
+        /// </summary>
         public IReadOnlyList<FlowEdge> edges => this._edges;
+
+        /// <summary>
+        /// Node通过id索引`
+        /// </summary>
         public IReadOnlyDictionary<int, FlowNode> nodeById => this._nodeById;
+
+        /// <summary>
+        /// Edge通过id索引
+        /// </summary>
         public IReadOnlyDictionary<int, FlowEdge> edgeById => this._edgeById;
 
+        /// <summary>
+        /// 实例id
+        /// </summary>
         public int uid { get; private set; }
+
+        /// <summary>
+        /// 资产
+        /// </summary>
         public FlowGraphAsset graphAsset { get; private set; }
+
+        /// <summary>
+        /// 变量管理
+        /// </summary>
         public VariablesManage variablesManage { get; private set; }
+
+        /// <summary>
+        /// 调用者
+        /// </summary>
         public object owner { get; private set; }
+
+        /// <summary>
+        /// 父级
+        /// </summary>
         public FlowGraph parent { get; private set; }
+
+        /// <summary>
+        /// 子级
+        /// </summary>
         public List<FlowGraph> children { get; private set; } = new List<FlowGraph>();
+
+        /// <summary>
+        /// 是否激活
+        /// </summary>
         public bool isActive { get; private set; }
 
+        /// <summary>
+        /// 开始事件
+        /// </summary>
         public event Action onStart;
+
+        /// <summary>
+        /// 轮询事件
+        /// </summary>
         public event Action onTick;
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public void Init(int uid, FlowGraphAsset graphAsset, object owner = null, FlowGraph parent = null)
         {
             this.uid = uid;
@@ -125,17 +177,26 @@ namespace Emilia.Flow
             }
         }
 
+        /// <summary>
+        /// 开始
+        /// </summary>
         public void Start()
         {
             isActive = true;
             onStart?.Invoke();
         }
 
+        /// <summary>
+        /// 轮询
+        /// </summary>
         public void Tick()
         {
             onTick?.Invoke();
         }
 
+        /// <summary>
+        /// 释放
+        /// </summary>
         public void Dispose()
         {
             isActive = false;

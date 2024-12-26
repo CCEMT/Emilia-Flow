@@ -38,7 +38,15 @@ namespace Emilia.Flow
 
         public FlowNodeAsset flowNodeAsset => this._flowNodeAsset;
         public FlowGraph graph => this._graph;
+
+        /// <summary>
+        /// 所有InputPort，根据Id索引
+        /// </summary>
         public IReadOnlyDictionary<string, FlowPort> inputPorts => this._inputPorts;
+
+        /// <summary>
+        /// 所有OutputPort，根据Id索引
+        /// </summary>
         public IReadOnlyDictionary<string, FlowPort> outputPorts => this._outputPorts;
 
         public void OnInit(FlowNodeAsset flowNodeAsset, FlowGraph graph)
@@ -75,6 +83,9 @@ namespace Emilia.Flow
             }
         }
 
+        /// <summary>
+        /// 获取InputPort的值
+        /// </summary>
         protected T GetInputValue<T>(string portName, T defaultValue = default)
         {
             FlowPort port = this._inputPorts.GetValueOrDefault(portName);
@@ -83,6 +94,9 @@ namespace Emilia.Flow
             return edge.outputPort.GetValue<T>();
         }
 
+        /// <summary>
+        /// 调用OutputPort的函数
+        /// </summary>
         protected void InvokeOutputPort(string portName, object arg = null)
         {
             FlowPort port = this._outputPorts.GetValueOrDefault(portName);
@@ -93,6 +107,22 @@ namespace Emilia.Flow
                 FlowEdge edge = port.edges[i];
                 edge.inputPort.Invoke(arg);
             }
+        }
+
+        /// <summary>
+        /// 获取OutputPort的值
+        /// </summary>
+        public T GetPortValue<T>(string portName)
+        {
+            return (T) getValueCache[portName]();
+        }
+
+        /// <summary>
+        /// 获取OutputPort的函数
+        /// </summary>
+        public Action<object> GetPortAction(string portName)
+        {
+            return methodCaches.GetValueOrDefault(portName);
         }
 
         public void Dispose()
@@ -114,16 +144,6 @@ namespace Emilia.Flow
             this._outputPorts.Clear();
             this._flowNodeAsset = null;
             this._graph = null;
-        }
-
-        public T GetPortValue<T>(string portName)
-        {
-            return (T) getValueCache[portName]();
-        }
-
-        public Action<object> GetPortAction(string portName)
-        {
-            return methodCaches.GetValueOrDefault(portName);
         }
 
         protected virtual void InitMethodCache() { }

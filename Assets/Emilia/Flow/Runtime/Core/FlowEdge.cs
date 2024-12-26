@@ -52,13 +52,32 @@ namespace Emilia.Flow
         private FlowPort _inputPort;
         private FlowPort _outputPort;
 
+        /// <summary>
+        /// 资产
+        /// </summary>
         public FlowEdgeAsset asset => this._asset;
+
         public FlowGraph graph => this._graph;
 
+        /// <summary>
+        /// Input节点
+        /// </summary>
         public FlowNode inputNode => this._inputNode;
+
+        /// <summary>
+        /// Output节点
+        /// </summary>
         public FlowNode outputNode => this._outputNode;
 
+        
+        /// <summary>
+        /// Input端口
+        /// </summary>
         public FlowPort inputPort => this._inputPort;
+        
+        /// <summary>
+        /// Output端口
+        /// </summary>
         public FlowPort outputPort => this._outputPort;
 
         public void OnInit(FlowEdgeAsset edgeAsset, FlowGraph graph)

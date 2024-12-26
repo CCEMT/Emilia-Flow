@@ -58,12 +58,18 @@ namespace Emilia.Flow
             }
         }
 
+        /// <summary>
+        /// 调用该端口所连接的函数
+        /// </summary>
         public void Invoke(object arg)
         {
             Action<object> action = this._node.GetPortAction(this._asset.portName);
             action?.Invoke(arg);
         }
 
+        /// <summary>
+        /// 获取该端口所连接的值
+        /// </summary>
         public T GetValue<T>()
         {
             return this._node.GetPortValue<T>(this._asset.portName);

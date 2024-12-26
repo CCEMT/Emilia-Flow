@@ -2,9 +2,9 @@
 
 Emilia-Flow是基于[Emilia-NodeEditor](https://github.com/CCEMT/Emilia-NodeEditor)实现的Unity流图节点编辑器
 
-![](./doc/flow-image.png)
+![Flow](./doc/flow-image.png)
 
-# 特点
+## 特点
 
 基于源生成实现 运行时无反射  
 函数可作为端口  
@@ -12,8 +12,9 @@ Emilia-Flow是基于[Emilia-NodeEditor](https://github.com/CCEMT/Emilia-NodeEdit
 可视化调试  
 热重载
 
-# 示例
-~~~
+## 示例
+
+~~~csharp
 //FlowNodeMenu为菜单特性
 [FlowNodeMenu("Test"), Serializable]
 public class TestNodeAsset : TestBaseNodeAsset<TestNode>
@@ -85,13 +86,14 @@ public partial class TestNode : TestBaseNode<TestNodeAsset>
 }
 ~~~
 
-# 安装
+## 安装
+
 Unity版本：2021.3+  
 Odin版本：3.1.2+  
 
 ### Odin为付费插件请自行导入
 
-### 使用unitypackage安装  
+### 使用unitypackage安装
 
 在Tag界面中选择对应版本  [Tag界面](https://github.com/CCEMT/Emilia-Flow/tags)  
 找到.unitypackage文件进行下载  
@@ -103,24 +105,24 @@ Odin版本：3.1.2+
 
 将以下内容添加进manifest文件中
 
-~~~
+~~~json
 "com.emilia.kit": "https://github.com/CCEMT/Emilia-Kit.git?path=Assets/Emilia/Kit",
 "com.emilia.node.editor": "https://github.com/CCEMT/Emilia-NodeEditor.git?path=Assets/Emilia/Node.Editor",
 "com.emilia.flow": "https://github.com/CCEMT/Emilia-Flow.git?path=Assets/Emilia/Flow"
 ~~~
 
-# 例子
+## 例子
 
 是基于Emilia-Flow实现的Unity类守望先锋Statescript编辑器 [Statescript](https://github.com/CCEMT/Emilia-Statescript)
-![](./doc/statescript.gif)
+![statescript](./doc/statescript.gif)
 
-# 开始
+## 开始
 
 以下为例子中的实现
 
 ### 创建编辑器文件
 
-~~~
+~~~csharp
 [CreateAssetMenu(menuName = "Emilia/Statescript/EditorStatescriptAsset", fileName = "EditorStatescriptAsset")]
 public class EditorStatescriptAsset : EditorFlowAsset
 {
@@ -135,7 +137,7 @@ subNodeTypes 节点基类，用于创建节点时菜单过滤
 
 ### 创建节点基类
 
-~~~
+~~~csharp
 public interface IStatescriptNodeAsset { }
 
 public abstract class StatescriptNodeAsset<T> : UniversalFlowNodeAsset<T>, IStatescriptNodeAsset where T : FlowNode, new() { }
@@ -145,7 +147,7 @@ public abstract class StatescriptNode<T> : UniversalFlowNode<T> where T : FlowNo
 
 ### 运行
 
-~~~
+~~~csharp
 //创建加载器
 FlowLoader flowLoader = new FlowLoader();
 flowLoader.runtimeFilePath = "Assets/..";
@@ -164,13 +166,14 @@ runner.Init(fileName, flowLoader, gameObject);
 ~~~
 
 ### 生命周期
-~~~
+
+~~~csharp
 runner.Start();//开始运行
 runner.Update();//更新
 runner.Dispose();//停止运行
 ~~~
 
-# 联系
+## 联系
 
-email：1076995595@qq.com  
+email：<1076995595@qq.com>  
 QQ群：956223592  

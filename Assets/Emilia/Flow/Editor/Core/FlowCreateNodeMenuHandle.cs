@@ -21,9 +21,9 @@ namespace Emilia.Flow.Editor
             {
                 ICreateNodeHandle createNodeHandle = smartValue.createNodeMenu.createNodeHandleCacheList[i];
 
-                object userData = createNodeHandle.userData;
-                if (userData == null) continue;
-                if (IsContain(userData.GetType())) continue;
+                object nodeData = createNodeHandle.nodeData;
+                if (nodeData == null) continue;
+                if (IsContain(nodeData.GetType())) continue;
                 smartValue.createNodeMenu.createNodeHandleCacheList.RemoveAt(i);
             }
         }

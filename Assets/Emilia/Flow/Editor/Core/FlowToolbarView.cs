@@ -12,14 +12,6 @@ namespace Emilia.Flow.Editor
 {
     public class FlowToolbarView : ToolbarView
     {
-        private EditorFlowAsset flowAsset;
-
-        public override void Initialize(EditorGraphView graphView)
-        {
-            this.flowAsset = graphView.graphAsset as EditorFlowAsset;
-            base.Initialize(graphView);
-        }
-
         protected override void InitControls()
         {
             AddControl(new ButtonToolbarViewControl("参数", OnEditorParameter));
@@ -36,11 +28,12 @@ namespace Emilia.Flow.Editor
 
         private void OnEditorParameter()
         {
+            EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
             EditorParametersManage editorParametersManage = flowAsset.editorParametersManage;
             if (editorParametersManage == null)
             {
                 editorParametersManage = flowAsset.editorParametersManage = ScriptableObject.CreateInstance<EditorParametersManage>();
-                EditorAssetKit.SaveAssetIntoObject(editorParametersManage, this.flowAsset);
+                EditorAssetKit.SaveAssetIntoObject(editorParametersManage, flowAsset);
             }
 
             Selection.activeObject = editorParametersManage;
@@ -58,6 +51,8 @@ namespace Emilia.Flow.Editor
 
         private OdinMenu BuildRunnerMenu()
         {
+            EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
+
             OdinMenu odinMenu = new OdinMenu();
             odinMenu.defaultWidth = 300;
 
@@ -84,7 +79,10 @@ namespace Emilia.Flow.Editor
 
         private void OnSave()
         {
-            EditorFlowUtility.DataBuild(this.flowAsset, (report) => {
+            EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
+            EditorFlowAsset rootFlowAsset = flowAsset.GetRootGraphAsset() as EditorFlowAsset;
+
+            EditorFlowUtility.DataBuild(rootFlowAsset, (report) => {
                 if (report.result == BuildResult.Succeeded) graphView.window.ShowNotification(new GUIContent("保存成功"), 1.5f);
             });
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Emilia.DataBuildPipeline.Editor;
+using Emilia.Node.Editor;
 
 namespace Emilia.Flow.Editor
 {
@@ -12,6 +13,8 @@ namespace Emilia.Flow.Editor
 
             container.editorFlowAsset.cache = container.flowGraphAsset;
             container.editorFlowAsset.cacheBindMap = container.bindMap;
+
+            container.editorFlowAsset.Save();
 
             onFinished.Invoke();
         }

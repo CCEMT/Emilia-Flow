@@ -80,7 +80,7 @@ namespace Emilia.Flow.Editor
         private void OnSave()
         {
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
-            EditorFlowAsset rootFlowAsset = flowAsset.GetRootGraphAsset() as EditorFlowAsset;
+            EditorFlowAsset rootFlowAsset = flowAsset.GetRootAsset() as EditorFlowAsset;
 
             EditorFlowUtility.DataBuild(rootFlowAsset, (report) => {
                 if (report.result == BuildResult.Succeeded) graphView.window.ShowNotification(new GUIContent("保存成功"), 1.5f);

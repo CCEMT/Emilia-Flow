@@ -20,6 +20,19 @@ namespace Emilia.Flow.Editor
             get => userData;
             set => userData = value;
         }
+
+        protected override string defaultDisplayName
+        {
+            get
+            {
+                if (userData == null) return base.defaultDisplayName;
+                Type nodeAssetType = userData.GetType();
+                FlowNodeMenuAttribute createNodeMenu = nodeAssetType.GetCustomAttribute<FlowNodeMenuAttribute>();
+                if (createNodeMenu == null) return base.defaultDisplayName;
+                OperateMenuUtility.PathToNameAndCategory(createNodeMenu.path, out string titleText, out string _);
+                return titleText;
+            }
+        }
     }
 
     [EditorNode(typeof(EditorFlowNodeAsset))]
@@ -37,19 +50,6 @@ namespace Emilia.Flow.Editor
         public override bool canExpanded => false;
 
         public object openScriptObject => flowNodeAsset.userData;
-
-        public override string defaultDisplayName
-        {
-            get
-            {
-                if (this.flowNodeAsset == null || this.flowNodeAsset.userData == null) return base.defaultDisplayName;
-                Type nodeAssetType = flowNodeAsset.userData.GetType();
-                FlowNodeMenuAttribute createNodeMenu = nodeAssetType.GetCustomAttribute<FlowNodeMenuAttribute>();
-                if (createNodeMenu == null) return base.defaultDisplayName;
-                OperateMenuUtility.PathToNameAndCategory(createNodeMenu.path, out string titleText, out string _);
-                return titleText;
-            }
-        }
 
         public override void Initialize(EditorGraphView graphView, EditorNodeAsset asset)
         {
@@ -141,7 +141,7 @@ namespace Emilia.Flow.Editor
 
                 FlowPortOrderAttribute flowPortOrderAttribute = propertyInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
                 if (flowPortOrderAttribute != null) editorPortInfo.order = flowPortOrderAttribute.order;
-                
+
                 FlowPortColorAttribute flowPortColorAttribute = propertyInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
                 if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
 
@@ -177,7 +177,7 @@ namespace Emilia.Flow.Editor
 
                 FlowPortOrderAttribute flowPortOrderAttribute = methodInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
                 if (flowPortOrderAttribute != null) editorPortInfo.order = flowPortOrderAttribute.order;
-                
+
                 FlowPortColorAttribute flowPortColorAttribute = methodInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
                 if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
 

@@ -69,12 +69,11 @@ namespace Emilia.Flow
         /// </summary>
         public FlowNode outputNode => this._outputNode;
 
-        
         /// <summary>
         /// Input端口
         /// </summary>
         public FlowPort inputPort => this._inputPort;
-        
+
         /// <summary>
         /// Output端口
         /// </summary>
@@ -100,7 +99,7 @@ namespace Emilia.Flow
             ReferencePool.Release(this);
         }
 
-        public void Clear()
+        void IReference.Clear()
         {
             this._asset = null;
             this._graph = null;

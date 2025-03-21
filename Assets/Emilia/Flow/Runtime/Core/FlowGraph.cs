@@ -220,6 +220,10 @@ namespace Emilia.Flow
             }
 
             uid = -1;
+            graphAsset = null;
+            owner = null;
+            parent = null;
+            children.Clear();
 
             onStart = null;
             onTick = null;

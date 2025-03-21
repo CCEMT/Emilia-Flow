@@ -80,7 +80,7 @@ namespace Emilia.Flow
             ReferencePool.Release(this);
         }
 
-        public void Clear()
+        void IReference.Clear()
         {
             _edges.Clear();
             _edgeById.Clear();

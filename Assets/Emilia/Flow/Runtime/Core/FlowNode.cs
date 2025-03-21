@@ -138,7 +138,7 @@ namespace Emilia.Flow
             ReferencePool.Release(this);
         }
 
-        public void Clear()
+        void IReference.Clear()
         {
             this._inputPorts.Clear();
             this._outputPorts.Clear();

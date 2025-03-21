@@ -203,7 +203,7 @@ namespace Emilia.Flow
             ReferencePool.Release(this);
         }
 
-        public void Clear()
+        void IReference.Clear()
         {
             int nodesCount = this._nodes.Count;
             for (int i = 0; i < nodesCount; i++)

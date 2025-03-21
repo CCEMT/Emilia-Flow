@@ -132,14 +132,14 @@ namespace Emilia.Flow
             foreach (FlowPort port in this._inputPorts.Values) port.OnDispose();
             foreach (FlowPort port in this._outputPorts.Values) port.OnDispose();
 
-            getValueCache.Clear();
-            methodCaches.Clear();
-
             ReferencePool.Release(this);
         }
 
         void IReference.Clear()
         {
+            getValueCache.Clear();
+            methodCaches.Clear();
+            
             this._inputPorts.Clear();
             this._outputPorts.Clear();
             this._flowNodeAsset = null;

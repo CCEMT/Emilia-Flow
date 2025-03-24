@@ -34,7 +34,7 @@ namespace Emilia.Flow.Editor
             });
 
             onFinished.Invoke();
-            
+
             void RefreshAssetDatabase()
             {
                 AssetDatabase.SaveAssets();

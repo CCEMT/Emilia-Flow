@@ -46,7 +46,7 @@ namespace Emilia.Flow.Editor
             }
 
             container.edges.AddRange(edges);
-            
+
             onFinished.Invoke();
         }
     }

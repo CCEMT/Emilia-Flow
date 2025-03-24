@@ -139,7 +139,7 @@ namespace Emilia.Flow
         {
             getValueCache.Clear();
             methodCaches.Clear();
-            
+
             this._inputPorts.Clear();
             this._outputPorts.Clear();
             this._flowNodeAsset = null;

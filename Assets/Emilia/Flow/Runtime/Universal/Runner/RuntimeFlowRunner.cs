@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Emilia.Flow
 {
-    public class RuntimeFlowRunner : IFlowRunner
+    public class RuntimeFlowRunner : IFlowRunner, IReference
     {
         private IFlowLoader flowLoader;
         private FlowGraph _flowGraph;
@@ -43,13 +43,15 @@ namespace Emilia.Flow
 
         public void Dispose()
         {
+            if (this._flowGraph != null && isActive) this._flowGraph.Dispose();
+            ReferencePool.Release(this);
+        }
+
+        void IReference.Clear()
+        {
             FlowRunnerUtility.RecycleId(uid);
             uid = -1;
 
-            if (this._flowGraph == null) return;
-            if (isActive == false) return;
-
-            this._flowGraph.Dispose();
             this._flowGraph = null;
         }
     }

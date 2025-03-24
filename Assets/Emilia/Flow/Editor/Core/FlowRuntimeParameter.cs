@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Emilia.Node.Universal.Editor;
 using Emilia.Variables;
+using Emilia.Variables.Editor;
 using Sirenix.OdinInspector;
 
 namespace Emilia.Flow.Editor

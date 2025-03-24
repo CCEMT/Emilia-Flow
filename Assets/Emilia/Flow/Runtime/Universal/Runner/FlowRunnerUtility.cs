@@ -1,4 +1,8 @@
-﻿using System;
+﻿#if !UNITY_EDITOR
+using Emilia.Reference;
+#endif
+
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -26,7 +30,7 @@ namespace Emilia.Flow
             Type type = Assembly.Load("Emilia.Flow.Editor").GetType("Emilia.Flow.Editor.EditorFlowRunner");
             return Activator.CreateInstance(type) as IFlowRunner;
 #else
-            return new RuntimeFlowRunner();
+            return ReferencePool.Acquire<RuntimeFlowRunner>();
 #endif
         }
     }

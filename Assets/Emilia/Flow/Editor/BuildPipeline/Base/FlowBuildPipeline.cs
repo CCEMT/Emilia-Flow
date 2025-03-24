@@ -6,7 +6,7 @@ namespace Emilia.Flow.Editor
     public class FlowBuildPipeline : UniversalBuildPipeline
     {
         public const string PipelineName = "Flow";
-        
+
         private FlowBuildArgs flowBuildArgs;
 
         protected override void RunInitialize()

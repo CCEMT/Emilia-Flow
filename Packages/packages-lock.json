@@ -7,14 +7,14 @@
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0"
       },
-      "hash": "046e0a676998f0c84560fb66043e1df5ff0eca58"
+      "hash": "8b86fd00dc4a489b87d8696a4a2893262371c5e9"
     },
     "com.emilia.node.editor": {
       "version": "https://github.com/CCEMT/Emilia-NodeEditor.git?path=Assets/Emilia/Node.Editor",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9e90152c5e7ca46c1de4e942fa7100761519b471"
+      "hash": "c33dd32e54c7e13e64e5ad29c0732d3509191b8e"
     },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",

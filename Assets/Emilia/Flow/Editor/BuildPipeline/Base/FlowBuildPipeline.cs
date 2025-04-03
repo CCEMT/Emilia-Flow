@@ -2,11 +2,9 @@
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(PipelineName)]
+    [BuildPipeline(typeof(FlowBuildArgs))]
     public class FlowBuildPipeline : UniversalBuildPipeline
     {
-        public const string PipelineName = "Flow";
-
         private FlowBuildArgs flowBuildArgs;
 
         protected override void RunInitialize()

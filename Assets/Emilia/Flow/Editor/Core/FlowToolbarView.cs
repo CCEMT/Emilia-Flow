@@ -26,7 +26,7 @@ namespace Emilia.Flow.Editor
             AddControl(new ButtonToolbarViewControl("保存", OnSave), ToolbarViewControlPosition.RightOrBottom);
         }
 
-        private void OnEditorParameter()
+        protected virtual void OnEditorParameter()
         {
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
             EditorParametersManage editorParametersManage = flowAsset.editorParametersManage;
@@ -39,7 +39,7 @@ namespace Emilia.Flow.Editor
             Selection.activeObject = editorParametersManage;
         }
 
-        private void OnEditorRuntimeParameter()
+        protected virtual void OnEditorRuntimeParameter()
         {
             GetFlowRunnerEvent getFlowRunnerEvent = GetFlowRunnerEvent.GetPooled();
             getFlowRunnerEvent.target = graphView;
@@ -49,7 +49,7 @@ namespace Emilia.Flow.Editor
             EditorKit.SetSelection(flowRuntimeParameter, "运行参数");
         }
 
-        private OdinMenu BuildRunnerMenu()
+        protected virtual OdinMenu BuildRunnerMenu()
         {
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
 
@@ -77,7 +77,7 @@ namespace Emilia.Flow.Editor
             return odinMenu;
         }
 
-        private void OnSave()
+        protected virtual void OnSave()
         {
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
             EditorFlowAsset rootFlowAsset = flowAsset.GetRootAsset() as EditorFlowAsset;

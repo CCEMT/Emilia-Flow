@@ -3,7 +3,7 @@ using Emilia.DataBuildPipeline.Editor;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(4000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(4000)]
     public class FlowBuildGraph : IDataBuild
     {
         public void Build(IBuildContainer buildContainer, Action onFinished)

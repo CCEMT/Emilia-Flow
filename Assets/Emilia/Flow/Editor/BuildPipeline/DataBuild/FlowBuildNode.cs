@@ -9,7 +9,7 @@ using Sirenix.Serialization;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(2000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(2000)]
     public class FlowBuildNode : IDataBuild
     {
         public void Build(IBuildContainer buildContainer, Action onFinished)

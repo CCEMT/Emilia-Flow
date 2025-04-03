@@ -6,7 +6,7 @@ using Emilia.Node.Editor;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(3000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(3000)]
     public class FlowBuildEdge : IDataBuild
     {
         public void Build(IBuildContainer buildContainer, Action onFinished)

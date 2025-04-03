@@ -5,7 +5,7 @@ using UnityEditor;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(3000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(3000)]
     public class FlowOutputRunner : IDataOutput
     {
         public void Output(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)

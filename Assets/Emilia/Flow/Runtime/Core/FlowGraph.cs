@@ -24,12 +24,21 @@ namespace Emilia.Flow
         [SerializeField]
         private VariablesManage _variablesManage;
 
+        [SerializeField]
+        private object _userData;
+
         public string id => this._id;
         public string description => this._description;
         public IReadOnlyList<FlowNodeAsset> nodes => this._nodes;
         public IReadOnlyList<FlowEdgeAsset> edges => this._edges;
 
         public VariablesManage variablesManage => this._variablesManage;
+
+        public object userData
+        {
+            get => this._userData;
+            internal set => this._userData = value;
+        }
 
         public FlowGraphAsset(string id, string description, List<FlowNodeAsset> nodes, List<FlowEdgeAsset> edges, VariablesManage variablesManage)
         {

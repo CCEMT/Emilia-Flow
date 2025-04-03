@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(2000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(2000)]
     public class FlowOutputFile : IDataOutput
     {
         public void Output(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)

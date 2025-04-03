@@ -4,7 +4,7 @@ using Emilia.Variables;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(1000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(1000)]
     public class FlowBuildParameters : IDataBuild
     {
         public void Build(IBuildContainer buildContainer, Action onFinished)

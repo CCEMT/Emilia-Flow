@@ -11,8 +11,6 @@ namespace Emilia.Flow.Editor
 
         public FlowBuildArgs(EditorFlowAsset flowAsset, string outputPath, Action<BuildReport> onBuildComplete = null)
         {
-            pipelineName = FlowBuildPipeline.PipelineName;
-
             this.flowAsset = flowAsset;
             this.outputPath = outputPath;
             this.onBuildComplete = onBuildComplete;

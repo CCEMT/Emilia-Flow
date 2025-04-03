@@ -4,7 +4,7 @@ using Emilia.Node.Editor;
 
 namespace Emilia.Flow.Editor
 {
-    [BuildPipeline(FlowBuildPipeline.PipelineName), BuildSequence(1000)]
+    [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(1000)]
     public class FlowOutputEditor : IDataOutput
     {
         public void Output(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)

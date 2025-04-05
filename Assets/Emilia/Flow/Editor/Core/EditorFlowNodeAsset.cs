@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Emilia.Flow.Attributes;
+using Emilia.Kit;
 using Emilia.Node.Attributes;
 using Emilia.Node.Editor;
 using Emilia.Node.Universal.Editor;
@@ -41,7 +42,6 @@ namespace Emilia.Flow.Editor
         protected EditorFlowNodeAsset flowNodeAsset;
         protected EditorFlowAsset editorFlowAsset;
 
-        private IFlowNodeDescription flowNodeDescription;
         private Label descriptionLabel;
 
         private bool _editInNode;
@@ -70,10 +70,9 @@ namespace Emilia.Flow.Editor
 
         private void AddDescription()
         {
-            flowNodeDescription = flowNodeAsset.userData as IFlowNodeDescription;
-            if (flowNodeDescription == null) return;
+            string description = ObjectDescriptionUtility.GetDescription(flowNodeAsset.userData, graphView);
 
-            descriptionLabel = new Label(flowNodeDescription.description);
+            descriptionLabel = new Label(description);
             descriptionLabel.enableRichText = true;
             descriptionLabel.pickingMode = PickingMode.Ignore;
             this.descriptionLabel.style.position = Position.Absolute;
@@ -83,7 +82,7 @@ namespace Emilia.Flow.Editor
         public override void OnValueChanged()
         {
             base.OnValueChanged();
-            if (descriptionLabel != null) descriptionLabel.text = flowNodeDescription.description;
+            if (descriptionLabel != null) descriptionLabel.text = ObjectDescriptionUtility.GetDescription(flowNodeAsset.userData, graphView);
         }
 
         public override List<EditorPortInfo> CollectStaticPortAssets()

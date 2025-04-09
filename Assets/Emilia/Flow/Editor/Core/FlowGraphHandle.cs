@@ -34,14 +34,15 @@ namespace Emilia.Flow.Editor
                 List<EditorFlowRunner> runners = EditorFlowRunner.runnerByAssetId.GetValueOrDefault(smartValue.graphAsset.id);
                 if (runners != null && runners.Count == 1)
                 {
-                    this.debugRunner = runners.FirstOrDefault();
-                    if (EditorFlowRunner.nodeMessage.TryGetValue(this.debugRunner.uid, out var queue)) queue.Clear();
+                    this.debugRunner = runners.FirstOrDefault(runner => runner.isActive);
+                    if (debugRunner != null && EditorFlowRunner.nodeMessage.TryGetValue(this.debugRunner.uid, out var queue)) queue.Clear();
                 }
             }
             else
             {
                 if (EditorFlowRunner.runnerByAssetId.ContainsKey(smartValue.graphAsset.id) == false) ClearRunner();
                 else if (EditorFlowRunner.runnerByAssetId[smartValue.graphAsset.id].Contains(this.debugRunner) == false) ClearRunner();
+                else if (debugRunner.isActive == false) ClearRunner();
             }
 
             DrawDebug();

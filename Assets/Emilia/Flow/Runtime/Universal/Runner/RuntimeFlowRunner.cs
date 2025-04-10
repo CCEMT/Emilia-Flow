@@ -22,6 +22,7 @@ namespace Emilia.Flow
             string fullPath = $"{this.flowLoader.runtimeFilePath}/{fileName}.bytes";
             TextAsset textAsset = this.flowLoader.LoadAsset(fullPath) as TextAsset;
             FlowGraphAsset flowGraphAsset = this.flowLoader.LoadFlowGraphAsset(textAsset.bytes);
+            flowLoader.ReleaseAsset(fullPath);
 
             this._flowGraph = ReferencePool.Acquire<FlowGraph>();
             this._flowGraph.Init(uid, flowGraphAsset, owner);

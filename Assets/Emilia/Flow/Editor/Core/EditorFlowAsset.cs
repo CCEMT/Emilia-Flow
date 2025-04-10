@@ -12,8 +12,11 @@ namespace Emilia.Flow.Editor
         public FlowGraphAsset cache;
 
         [NonSerialized, OdinSerialize]
-        public Dictionary<int, string> cacheBindMap = new Dictionary<int, string>();
-
+        public Dictionary<int, string> cacheEditorByRuntimeIdMap = new Dictionary<int, string>();
+        
+        [NonSerialized, OdinSerialize]
+        public Dictionary<string, int> cacheRuntimeByEditorIdMap = new Dictionary<string, int>();
+        
         public abstract string outputPath { get; }
 
         public abstract Type[] subNodeTypes { get; }

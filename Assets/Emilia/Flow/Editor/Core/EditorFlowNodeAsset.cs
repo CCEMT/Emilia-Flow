@@ -190,6 +190,7 @@ namespace Emilia.Flow.Editor
         {
             EditorPortInfo editorPortInfo = new EditorPortInfo();
             editorPortInfo.id = id;
+            editorPortInfo.nodePortViewType = typeof(FlowPortView);
             editorPortInfo.displayName = flowPortGenerator.displayName;
             editorPortInfo.direction = direction;
             editorPortInfo.orientation = flowPortGenerator.capacity.HasFlag(FlowPortCapacity.Vertical) ? EditorOrientation.Vertical : EditorOrientation.Horizontal;

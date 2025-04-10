@@ -144,7 +144,7 @@ namespace Emilia.Flow.Editor
 
         private EditorFlowNodeView GetEditorFlowNodeView(int nodeId)
         {
-            string editorNodeId = editorFlowAsset.cacheBindMap.GetValueOrDefault(nodeId);
+            string editorNodeId = editorFlowAsset.cacheEditorByRuntimeIdMap.GetValueOrDefault(nodeId);
             if (string.IsNullOrEmpty(editorNodeId)) return null;
 
             IEditorNodeView nodeView = smartValue.graphElementCache.nodeViewById.GetValueOrDefault(editorNodeId);

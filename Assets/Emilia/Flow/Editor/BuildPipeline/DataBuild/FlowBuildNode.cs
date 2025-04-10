@@ -94,7 +94,8 @@ namespace Emilia.Flow.Editor
 
                 container.nodes.Add(copy);
                 container.nodeMap[editorNodeAsset.id] = copy;
-                container.bindMap[copy.id] = editorNodeAsset.id;
+                container.editorByRuntimeMap[copy.id] = editorNodeAsset.id;
+                container.runtimeByEditorMap[editorNodeAsset.id] = copy.id;
             }
 
             onFinished.Invoke();

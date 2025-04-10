@@ -8,7 +8,9 @@ namespace Emilia.Flow.Editor
     {
         public EditorFlowAsset editorFlowAsset { get; set; }
 
-        public Dictionary<int, string> bindMap { get; set; } = new Dictionary<int, string>();
+        public Dictionary<int, string> editorByRuntimeMap { get; set; } = new Dictionary<int, string>();
+        public Dictionary<string, int> runtimeByEditorMap { get; set; } = new Dictionary<string, int>();
+        
         public List<FlowNodeAsset> nodes { get; set; } = new List<FlowNodeAsset>();
         public List<FlowEdgeAsset> edges { get; set; } = new List<FlowEdgeAsset>();
         public VariablesManage variablesManage { get; set; }

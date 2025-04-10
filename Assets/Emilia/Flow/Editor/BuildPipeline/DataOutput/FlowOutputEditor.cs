@@ -12,7 +12,8 @@ namespace Emilia.Flow.Editor
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
 
             container.editorFlowAsset.cache = container.flowGraphAsset;
-            container.editorFlowAsset.cacheBindMap = container.bindMap;
+            container.editorFlowAsset.cacheEditorByRuntimeIdMap = container.editorByRuntimeMap;
+            container.editorFlowAsset.cacheRuntimeByEditorIdMap = container.runtimeByEditorMap;
 
             container.editorFlowAsset.Save();
 

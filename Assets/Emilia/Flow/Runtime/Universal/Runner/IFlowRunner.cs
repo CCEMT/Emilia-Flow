@@ -3,6 +3,8 @@
     public interface IFlowRunner
     {
         int uid { get; }
+        
+        string fileName { get; }
 
         FlowGraphAsset asset { get; }
 

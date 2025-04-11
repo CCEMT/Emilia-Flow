@@ -17,7 +17,7 @@ namespace Emilia.Flow.Editor
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
             FlowBuildArgs args = buildArgs as FlowBuildArgs;
 
-            if (string.IsNullOrEmpty(args.outputPath))
+            if (args.isGenerateFile == false || string.IsNullOrEmpty(args.outputPath))
             {
                 onFinished.Invoke();
                 return;

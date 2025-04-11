@@ -18,7 +18,6 @@ namespace Emilia.Flow.Editor
         public static IReadOnlyDictionary<int, EditorFlowRunner> runnerByUid => _runnerByUid;
 
         private object owner;
-        private EditorFlowAsset _editorFlowAsset;
 
         private FlowGraph _flowGraph;
 
@@ -27,35 +26,37 @@ namespace Emilia.Flow.Editor
         public FlowGraphAsset asset => _flowGraph.graphAsset;
         public FlowGraph graph => _flowGraph;
         public bool isActive => _flowGraph?.isActive ?? false;
-        public EditorFlowAsset editorFlowAsset => _editorFlowAsset;
 
         public void Init(string fileName, IFlowLoader loader, object owner = null)
         {
             try
             {
                 this.fileName = fileName;
-                uid = FlowRunnerUtility.GetId();
-                this.owner = owner;
 
                 string fullPath = $"{loader.editorFilePath}/{fileName}.asset";
                 EditorFlowAsset loadAsset = AssetDatabase.LoadAssetAtPath<EditorFlowAsset>(fullPath);
                 if (loadAsset == null) return;
-
-                this._editorFlowAsset = loadAsset;
-
-                _flowGraph = new FlowGraph();
-                _flowGraph.Init(uid, loadAsset.cache, owner);
-
-                if (_runnerByAssetId.ContainsKey(loadAsset.id) == false) _runnerByAssetId[loadAsset.id] = new List<EditorFlowRunner>();
-                _runnerByAssetId[loadAsset.id].Add(this);
-
-                _runnerByUid[uid] = this;
+                Init(loadAsset.cache, owner);
             }
             catch (Exception e)
             {
                 Debug.LogError($"{owner} Init 时出现错误：\n{e.ToUnityLogString()}");
                 _flowGraph?.Dispose();
             }
+        }
+
+        public void Init(FlowGraphAsset graphAsset, object owner = null)
+        {
+            uid = FlowRunnerUtility.GetId();
+            this.owner = owner;
+
+            _flowGraph = new FlowGraph();
+            _flowGraph.Init(uid, graphAsset, owner);
+
+            if (_runnerByAssetId.ContainsKey(graphAsset.id) == false) _runnerByAssetId[graphAsset.id] = new List<EditorFlowRunner>();
+            _runnerByAssetId[graphAsset.id].Add(this);
+
+            _runnerByUid[uid] = this;
         }
 
         public void Reload(FlowGraphAsset flowGraphAsset)
@@ -114,7 +115,7 @@ namespace Emilia.Flow.Editor
 
                 if (this._flowGraph == null) return;
 
-                if (_runnerByAssetId.ContainsKey(this._editorFlowAsset.id)) _runnerByAssetId[this._editorFlowAsset.id].Remove(this);
+                if (_runnerByAssetId.ContainsKey(this.asset.id)) _runnerByAssetId[asset.id].Remove(this);
 
                 if (isActive) this._flowGraph.Dispose();
                 this._flowGraph = null;

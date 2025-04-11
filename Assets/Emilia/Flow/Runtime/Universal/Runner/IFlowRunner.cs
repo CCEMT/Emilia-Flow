@@ -14,6 +14,8 @@
 
         void Init(string fileName, IFlowLoader loader, object owner = null);
 
+        void Init(FlowGraphAsset graphAsset, object owner = null);
+        
         void Start();
 
         void Update();

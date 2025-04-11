@@ -7,7 +7,7 @@ namespace Emilia.Flow
     {
         private FlowGraph _flowGraph;
 
-        public int uid { get; private set; } = -1;
+        public int uid { get; private set; }
         public string fileName { get; private set; }
         public FlowGraphAsset asset => this._flowGraph.graphAsset;
         public FlowGraph graph => this._flowGraph;
@@ -16,8 +16,6 @@ namespace Emilia.Flow
         public void Init(string fileName, IFlowLoader loader, object owner = null)
         {
             this.fileName = fileName;
-            uid = FlowRunnerUtility.GetId();
-
             string fullPath = $"{loader.runtimeFilePath}/{fileName}.bytes";
             TextAsset textAsset = loader.LoadAsset(fullPath) as TextAsset;
             if (textAsset == null) return;
@@ -27,8 +25,15 @@ namespace Emilia.Flow
 
             loader.ReleaseAsset(fullPath);
 
+            Init(flowGraphAsset,owner);
+        }
+
+        public void Init(FlowGraphAsset graphAsset, object owner = null)
+        {
+            uid = FlowRunnerUtility.GetId();
+            
             this._flowGraph = ReferencePool.Acquire<FlowGraph>();
-            this._flowGraph.Init(uid, flowGraphAsset, owner);
+            this._flowGraph.Init(uid, graphAsset, owner);
         }
 
         public void Start()

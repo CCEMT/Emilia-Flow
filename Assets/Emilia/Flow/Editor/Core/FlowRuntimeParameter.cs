@@ -10,6 +10,7 @@ namespace Emilia.Flow.Editor
     public class FlowRuntimeParameter
     {
         private EditorFlowRunner runner;
+        private EditorFlowAsset editorFlowAsset;
 
         private Dictionary<string, Variable> _runtimeUserVariables = new Dictionary<string, Variable>();
 
@@ -23,7 +24,7 @@ namespace Emilia.Flow.Editor
 
                 foreach (var variablePair in this.runner.graph.variablesManage.variableMap)
                 {
-                    EditorParameter editorParameter = this.runner.editorFlowAsset.editorParametersManage.parameters.Find((x) => x.key == variablePair.Key);
+                    EditorParameter editorParameter = editorFlowAsset.editorParametersManage.parameters.Find((x) => x.key == variablePair.Key);
                     if (editorParameter == null) continue;
                     _runtimeUserVariables[editorParameter.description] = variablePair.Value;
                 }
@@ -34,8 +35,9 @@ namespace Emilia.Flow.Editor
             set { }
         }
 
-        public FlowRuntimeParameter(EditorFlowRunner runner)
+        public FlowRuntimeParameter(EditorFlowRunner runner, EditorFlowAsset editorFlowAsset)
         {
+            this.editorFlowAsset = editorFlowAsset;
             this.runner = runner;
         }
     }

@@ -8,6 +8,7 @@ namespace Emilia.Flow
         string editorFilePath { get; }
 
         Object LoadAsset(string path);
+        void ReleaseAsset(string path);
         FlowGraphAsset LoadFlowGraphAsset(byte[] bytes);
     }
 }

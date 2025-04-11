@@ -45,7 +45,10 @@ namespace Emilia.Flow.Editor
             getFlowRunnerEvent.target = graphView;
 
             graphView.SendEvent_Internal(getFlowRunnerEvent, DispatchMode_Internals.Immediate);
-            FlowRuntimeParameter flowRuntimeParameter = new FlowRuntimeParameter(getFlowRunnerEvent.runner);
+
+            EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
+
+            FlowRuntimeParameter flowRuntimeParameter = new FlowRuntimeParameter(getFlowRunnerEvent.runner, flowAsset);
             EditorKit.SetSelection(flowRuntimeParameter, "运行参数");
         }
 
@@ -65,7 +68,7 @@ namespace Emilia.Flow.Editor
             {
                 EditorFlowRunner runner = runners[i];
                 string itemName = runner.graph.owner.ToString();
-                if (string.IsNullOrEmpty(runner.editorFlowAsset.description) == false) itemName = $"{runner.editorFlowAsset.description}({runner.editorFlowAsset.name})";
+                if (string.IsNullOrEmpty(runner.asset.description) == false) itemName = $"{runner.asset.description}({runner.fileName})";
                 odinMenu.AddItem(itemName, () => {
                     SetFlowRunnerEvent e = SetFlowRunnerEvent.Create(runner);
                     e.target = graphView;

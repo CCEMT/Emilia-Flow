@@ -56,27 +56,19 @@ namespace Emilia.Flow.Editor
                     inputPorts.Add(portAsset);
                 }
 
-                PropertyInfo[] propertyInfos = nodeType.GetProperties(bindingFlags);
-                int propertyAmount = propertyInfos.Length;
-                for (int j = 0; j < propertyAmount; j++)
-                {
-                    PropertyInfo propertyInfo = propertyInfos[j];
-                    MethodInfo getMethodInfo = propertyInfo.GetGetMethod();
-                    if (getMethodInfo == null) continue;
-
-                    FlowOutputValuePort flowOutputAttribute = propertyInfo.GetCustomAttribute<FlowOutputValuePort>(true);
-                    if (flowOutputAttribute == null) continue;
-
-                    FlowPortAsset portAsset = new FlowPortAsset(propertyInfo.Name, new List<int>());
-
-                    outputPorts.Add(portAsset);
-                }
-
                 MethodInfo[] methods = nodeType.GetMethods(bindingFlags);
                 int methodAmount = methods.Length;
                 for (int j = 0; j < methodAmount; j++)
                 {
                     MethodInfo methodInfo = methods[j];
+
+                    FlowOutputValuePort flowOutputAttribute = methodInfo.GetCustomAttribute<FlowOutputValuePort>(true);
+                    if (flowOutputAttribute != null)
+                    {
+                        FlowPortAsset valuePortAsset = new FlowPortAsset(methodInfo.Name, new List<int>());
+                        outputPorts.Add(valuePortAsset);
+                        continue;
+                    }
 
                     bool? inputOrOutput = null;
                     FlowInputMethodPort flowInputMethodAttribute = methodInfo.GetCustomAttribute<FlowInputMethodPort>(true);

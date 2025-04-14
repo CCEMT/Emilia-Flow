@@ -70,11 +70,8 @@ namespace Emilia.Flow
         /// <summary>
         /// 获取该端口所连接的值
         /// </summary>
-        public T GetValue<T>()
-        {
-            return this._node.GetPortValue<T>(this._asset.portName);
-        }
-
+        public T GetValue<T>(object arg) => this._node.GetPortValue<T>(this._asset.portName, arg);
+        
         public void OnDispose()
         {
             ReferencePool.Release(this);

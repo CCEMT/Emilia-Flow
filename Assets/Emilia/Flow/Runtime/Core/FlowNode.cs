@@ -33,7 +33,7 @@ namespace Emilia.Flow
         private Dictionary<string, FlowPort> _inputPorts = new Dictionary<string, FlowPort>();
         private Dictionary<string, FlowPort> _outputPorts = new Dictionary<string, FlowPort>();
 
-        protected Dictionary<string, Func<object>> getValueCache { get; } = new Dictionary<string, Func<object>>();
+        protected Dictionary<string, Func<object, object>> getValueCache { get; } = new Dictionary<string, Func<object, object>>();
         protected Dictionary<string, Action<object>> methodCaches { get; } = new Dictionary<string, Action<object>>();
 
         public FlowNodeAsset flowNodeAsset => this._flowNodeAsset;
@@ -86,12 +86,27 @@ namespace Emilia.Flow
         /// <summary>
         /// 获取InputPort的值
         /// </summary>
-        protected T GetInputValue<T>(string portName, T defaultValue = default)
+        protected T GetInputValue<T>(string portName, T defaultValue = default, object arg = null)
         {
             FlowPort port = this._inputPorts.GetValueOrDefault(portName);
             if (port == null || port.edges.Count == 0) return defaultValue;
             FlowEdge edge = port.edges[0];
-            return edge.outputPort.GetValue<T>();
+            return edge.outputPort.GetValue<T>(arg);
+        }
+
+        /// <summary>
+        /// 获取所有InputPort的值
+        /// </summary>
+        protected void GetInputValues<T>(string portName, List<T> values, object arg = null)
+        {
+            FlowPort port = this._inputPorts.GetValueOrDefault(portName);
+
+            int amount = port.edges.Count;
+            for (int i = 0; i < amount; i++)
+            {
+                FlowEdge edge = port.edges[i];
+                values.Add(edge.outputPort.GetValue<T>(arg));
+            }
         }
 
         /// <summary>
@@ -112,18 +127,12 @@ namespace Emilia.Flow
         /// <summary>
         /// 获取OutputPort的值
         /// </summary>
-        public T GetPortValue<T>(string portName)
-        {
-            return (T) getValueCache[portName]();
-        }
+        public T GetPortValue<T>(string portName, object arg) => (T) getValueCache[portName](arg);
 
         /// <summary>
         /// 获取OutputPort的函数
         /// </summary>
-        public Action<object> GetPortAction(string portName)
-        {
-            return methodCaches.GetValueOrDefault(portName);
-        }
+        public Action<object> GetPortAction(string portName) => methodCaches.GetValueOrDefault(portName);
 
         public void Dispose()
         {

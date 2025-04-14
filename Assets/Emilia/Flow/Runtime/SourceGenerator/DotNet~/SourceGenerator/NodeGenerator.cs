@@ -45,44 +45,50 @@ namespace Emilia.Flow.SourceGenerator
                     className += ">";
                 }
 
-                List<IPropertySymbol> valueProperties = new List<IPropertySymbol>();
                 List<IMethodSymbol> valueMethods = new List<IMethodSymbol>();
+                List<IMethodSymbol> valueMethodArgs = new List<IMethodSymbol>();
 
                 List<IMethodSymbol> methods = new List<IMethodSymbol>();
                 List<IMethodSymbol> methodArgs = new List<IMethodSymbol>();
 
-                foreach (PropertyDeclarationSyntax propertyDeclaration in classDeclaration.Members.OfType<PropertyDeclarationSyntax>())
-                {
-                    IPropertySymbol propertySymbol = model.GetDeclaredSymbol(propertyDeclaration);
-                    if (propertySymbol != null && propertySymbol.GetAttributes().Any(attr => attr.AttributeClass?.Name == nameof(FlowOutputValuePort))) valueProperties.Add(propertySymbol);
-                }
-
                 foreach (MethodDeclarationSyntax methodDeclaration in classDeclaration.Members.OfType<MethodDeclarationSyntax>())
                 {
                     IMethodSymbol methodSymbol = model.GetDeclaredSymbol(methodDeclaration);
-                    if (methodSymbol != null &&
-                        methodSymbol.GetAttributes().Any(attr =>
+                    if (methodSymbol == null) continue;
+
+                    if (methodSymbol.GetAttributes().Any(attr =>
                             attr.AttributeClass?.Name == nameof(FlowInputMethodPort) ||
                             attr.AttributeClass?.Name == nameof(FlowOutputMethodPort)))
                     {
-                        if (methodSymbol.ReturnsVoid == false) valueMethods.Add(methodSymbol);
-                        else
+                        if (methodSymbol.ReturnsVoid)
                         {
                             if (methodSymbol.Parameters.Length > 0) methodArgs.Add(methodSymbol);
                             else methods.Add(methodSymbol);
                         }
                     }
+
+                    if (methodSymbol.GetAttributes().Any(attr => attr.AttributeClass?.Name == nameof(FlowOutputValuePort)))
+                    {
+                        if (methodSymbol.ReturnsVoid == false)
+                        {
+                            if (methodSymbol.Parameters.Length > 0) valueMethodArgs.Add(methodSymbol);
+                            else valueMethods.Add(methodSymbol);
+                        }
+                    }
                 }
 
-                if (valueProperties.Count <= 0 && valueMethods.Count <= 0 && methods.Count <= 0) continue;
+                if (valueMethods.Count <= 0 && valueMethodArgs.Count <= 0 && methods.Count <= 0 && methodArgs.Count <= 0) continue;
 
-                var source = GenerateClassWithDictionary(namespaceName, className, methods, methodArgs, valueProperties, valueMethods);
+                var source = GenerateClassWithDictionary(namespaceName, className, methods, methodArgs, valueMethods, valueMethodArgs);
                 context.AddSource($"{classDeclaration.Identifier.Text}_Generated.cs", SourceText.From(source, Encoding.UTF8));
             }
         }
 
-        private string GenerateClassWithDictionary(string namespaceName, string className, List<IMethodSymbol> methods, List<IMethodSymbol> methodArgs, List<IPropertySymbol> valueProperties,
-            List<IMethodSymbol> valueMethods)
+        private string GenerateClassWithDictionary(string namespaceName, string className,
+            List<IMethodSymbol> methods,
+            List<IMethodSymbol> methodArgs,
+            List<IMethodSymbol> values,
+            List<IMethodSymbol> valueArgs)
         {
             StringBuilder sourceBuilder = new StringBuilder($@"
 using System;
@@ -96,8 +102,8 @@ namespace {namespaceName}
         {{
             base.InitMethodCache();
 ");
-            foreach (IPropertySymbol property in valueProperties) sourceBuilder.AppendLine($@"            getValueCache[""{property.Name}""] = () => {property.Name};");
-            foreach (IMethodSymbol method in valueMethods) sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = {method.Name};");
+            foreach (IMethodSymbol method in values) sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = (_) => {method.Name}();");
+            foreach (IMethodSymbol method in valueArgs) sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = (arg) => (object){method.Name}(arg);");
 
             foreach (IMethodSymbol method in methods) sourceBuilder.AppendLine($@"            methodCaches[""{method.Name}""] = (_) => {method.Name}();");
             foreach (IMethodSymbol method in methodArgs) sourceBuilder.AppendLine($@"            methodCaches[""{method.Name}""] = {method.Name};");

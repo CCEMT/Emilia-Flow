@@ -35,7 +35,7 @@ namespace Emilia.Flow.Attributes
         public FlowInputValuePort(string displayName, FlowPortCapacity capacity = FlowPortCapacity.None) : base(displayName, capacity) { }
     }
 
-    [AttributeUsage(AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Method)]
     public class FlowOutputValuePort : FlowValuePort
     {
         public FlowOutputValuePort(string displayName, FlowPortCapacity capacity = FlowPortCapacity.None) : base(displayName, capacity) { }

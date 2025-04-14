@@ -124,34 +124,27 @@ namespace Emilia.Flow.Editor
 
             Type nodeType = universalFlowNodeAsset.nodeType;
 
-            PropertyInfo[] propertyInfos = nodeType.GetProperties(bindingFlags);
-            int propertyAmount = propertyInfos.Length;
-            for (int i = 0; i < propertyAmount; i++)
-            {
-                PropertyInfo propertyInfo = propertyInfos[i];
-                MethodInfo getMethodInfo = propertyInfo.GetGetMethod();
-                if (getMethodInfo == null) continue;
-
-                FlowOutputValuePort flowOutputVarPort = propertyInfo.GetCustomAttribute<FlowOutputValuePort>(true);
-                if (flowOutputVarPort == null) continue;
-
-                EditorPortInfo editorPortInfo = ToEditorPortInfo(propertyInfo.Name, EditorPortDirection.Output, propertyInfo.PropertyType, flowOutputVarPort);
-                editorPortInfo.order = -1 + i * 0.001f;
-
-                FlowPortOrderAttribute flowPortOrderAttribute = propertyInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
-                if (flowPortOrderAttribute != null) editorPortInfo.order = flowPortOrderAttribute.order;
-
-                FlowPortColorAttribute flowPortColorAttribute = propertyInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
-                if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
-
-                portAssets.Add(editorPortInfo);
-            }
-
             MethodInfo[] methods = nodeType.GetMethods(bindingFlags);
             int methodAmount = methods.Length;
             for (int i = 0; i < methodAmount; i++)
             {
                 MethodInfo methodInfo = methods[i];
+
+                FlowOutputValuePort flowOutputVarPort = methodInfo.GetCustomAttribute<FlowOutputValuePort>(true);
+                if (flowOutputVarPort != null)
+                {
+                    EditorPortInfo valueEditorPortInfo = ToEditorPortInfo(methodInfo.Name, EditorPortDirection.Output, methodInfo.ReturnType, flowOutputVarPort);
+                    valueEditorPortInfo.order = -1 + i * 0.001f;
+
+                    FlowPortOrderAttribute valueFlowPortOrderAttribute = methodInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
+                    if (valueFlowPortOrderAttribute != null) valueEditorPortInfo.order = valueFlowPortOrderAttribute.order;
+
+                    FlowPortColorAttribute valueFlowPortColorAttribute = methodInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
+                    if (valueFlowPortColorAttribute != null) valueEditorPortInfo.color = new Color(valueFlowPortColorAttribute.r, valueFlowPortColorAttribute.g, valueFlowPortColorAttribute.b);
+
+                    portAssets.Add(valueEditorPortInfo);
+                    continue;
+                }
 
                 EditorPortDirection? isInputOrOutput = null;
                 FlowPortGenerator flowPortGenerator = null;

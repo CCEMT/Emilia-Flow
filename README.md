@@ -32,28 +32,22 @@ public partial class TestNode : TestBaseNode<TestNodeAsset>
 {
     //注册值的输出端口
     [FlowOutputValuePort("AddResult")]
-    public int addResult
+    public int AddResult()
     {
-        get
-        {
-            //获取a端口的值如果没有则返回默认值this.asset.a
-            int xPort = GetInputValue(nameof(this.asset.a), this.asset.a);
-            int yPort = GetInputValue(nameof(this.asset.b), this.asset.b);
+        //获取a端口的值如果没有则返回默认值this.asset.a
+        int xPort = GetInputValue(nameof(this.asset.a), this.asset.a);
+        int yPort = GetInputValue(nameof(this.asset.b), this.asset.b);
 
-            return xPort + yPort;
-        }
+        return xPort + yPort;
     }
 
     [FlowOutputValuePort("SubResult")]
-    public int subResult
+    public int SubResult()
     {
-        get
-        {
-            int xPort = GetInputValue(nameof(this.asset.a), this.asset.a);
-            int yPort = GetInputValue(nameof(this.asset.b), this.asset.b);
+        int xPort = GetInputValue(nameof(this.asset.a), this.asset.a);
+        int yPort = GetInputValue(nameof(this.asset.b), this.asset.b);
 
-            return xPort - yPort;
-        }
+        return xPort - yPort;
     }
 
     //注册函数输入

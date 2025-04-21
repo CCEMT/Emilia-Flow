@@ -1,6 +1,6 @@
 ﻿using System;
 using Emilia.DataBuildPipeline.Editor;
-using Emilia.Node.Editor;
+using Emilia.Kit.Editor;
 
 namespace Emilia.Flow.Editor
 {
@@ -15,7 +15,7 @@ namespace Emilia.Flow.Editor
             container.editorFlowAsset.cacheEditorByRuntimeIdMap = container.editorByRuntimeMap;
             container.editorFlowAsset.cacheRuntimeByEditorIdMap = container.runtimeByEditorMap;
 
-            container.editorFlowAsset.Save();
+            container.editorFlowAsset.SaveAll();
 
             onFinished.Invoke();
         }

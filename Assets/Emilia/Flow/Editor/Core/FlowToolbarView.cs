@@ -36,7 +36,7 @@ namespace Emilia.Flow.Editor
                 EditorAssetKit.SaveAssetIntoObject(editorParametersManage, flowAsset);
             }
 
-            Selection.activeObject = editorParametersManage;
+            graphView.graphSelected.UpdateSelected(new List<ISelectedHandle> {editorParametersManage});
         }
 
         protected virtual void OnEditorRuntimeParameter()

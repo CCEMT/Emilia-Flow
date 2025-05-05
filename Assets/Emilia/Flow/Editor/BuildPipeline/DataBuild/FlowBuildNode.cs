@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Emilia.DataBuildPipeline.Editor;
 using Emilia.Flow.Attributes;
@@ -84,6 +85,9 @@ namespace Emilia.Flow.Editor
                     else outputPorts.Add(portAsset);
                 }
 
+                FilterPort(universalFlowNodeAsset, inputPorts);
+                FilterPort(universalFlowNodeAsset, outputPorts);
+
                 container.nodes.Add(copy);
                 container.nodeMap[editorNodeAsset.id] = copy;
                 container.editorByRuntimeMap[copy.id] = editorNodeAsset.id;
@@ -91,6 +95,18 @@ namespace Emilia.Flow.Editor
             }
 
             onFinished.Invoke();
+        }
+
+        private static void FilterPort(IUniversalFlowNodeAsset universalFlowNodeAsset, List<FlowPortAsset> portAssets)
+        {
+            List<string> portIds = portAssets.Select((x) => x.portName).ToList();
+            FlowShowOrHideUtility.FilterPort(universalFlowNodeAsset, portIds);
+            
+            for (int i = portAssets.Count - 1; i >= 0; i--)
+            {
+                FlowPortAsset portAsset = portAssets[i];
+                if (portIds.Contains(portAsset.portName) == false) portAssets.RemoveAt(i);
+            }
         }
     }
 }

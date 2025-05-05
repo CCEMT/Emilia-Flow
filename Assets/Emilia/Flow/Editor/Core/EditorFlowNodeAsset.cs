@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Emilia.Flow.Attributes;
 using Emilia.Kit;
@@ -83,6 +84,7 @@ namespace Emilia.Flow.Editor
         {
             base.OnValueChanged(isSilent);
             if (descriptionLabel != null) descriptionLabel.text = ObjectDescriptionUtility.GetDescription(flowNodeAsset.userData, graphView);
+            RebuildPortView();
         }
 
         public override List<EditorPortInfo> CollectStaticPortAssets()
@@ -176,7 +178,97 @@ namespace Emilia.Flow.Editor
                 portAssets.Add(editorPortInfo);
             }
 
+            FilterPort(portAssets);
+
             return portAssets;
+        }
+
+        private void FilterPort(List<EditorPortInfo> portAssets)
+        {
+            IUniversalFlowNodeAsset universalFlowNodeAsset = flowNodeAsset.userData as IUniversalFlowNodeAsset;
+            if (universalFlowNodeAsset == null) return;
+
+            Dictionary<string, FlowPortIf> flowPortIfs = new Dictionary<string, FlowPortIf>();
+
+            Type nodeAssetType = universalFlowNodeAsset.GetType();
+            MemberInfo[] memberInfos = nodeAssetType.GetMembers(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+            int methodAmount = memberInfos.Length;
+            for (int i = 0; i < methodAmount; i++)
+            {
+                MemberInfo memberInfo = memberInfos[i];
+
+                List<FlowPortShowIfAttribute> showIfAttributes = memberInfo.GetCustomAttributes<FlowPortShowIfAttribute>().ToList();
+
+                showIfAttributes.ForEach((attribute) => {
+                    if (flowPortIfs.ContainsKey(attribute.portId)) return;
+                    FlowPortIf flowPortIf = new FlowPortIf();
+                    flowPortIf.memberInfo = memberInfo;
+                    flowPortIf.showIfAttribute = attribute;
+                    flowPortIfs.Add(attribute.portId, flowPortIf);
+                });
+
+                List<FlowPortHideIfAttribute> hideIfAttributes = memberInfo.GetCustomAttributes<FlowPortHideIfAttribute>().ToList();
+
+                hideIfAttributes.ForEach((attribute) => {
+                    if (flowPortIfs.ContainsKey(attribute.portId)) return;
+                    FlowPortIf flowPortIf = new FlowPortIf();
+                    flowPortIf.memberInfo = memberInfo;
+                    flowPortIf.hideIfAttribute = attribute;
+                    flowPortIfs.Add(attribute.portId, flowPortIf);
+                });
+            }
+
+            for (int i = 0; i < portAssets.Count; i++)
+            {
+                EditorPortInfo portAsset = portAssets[i];
+                if (flowPortIfs.TryGetValue(portAsset.id, out FlowPortIf flowPortIf) == false) continue;
+                if (flowPortIf.showIfAttribute != null)
+                {
+                    bool? isShow = If(universalFlowNodeAsset, flowPortIf.memberInfo, flowPortIf.showIfAttribute.value);
+                    if (isShow == true) continue;
+
+                    portAssets.RemoveAt(i);
+                    i--;
+                }
+                else if (flowPortIf.hideIfAttribute != null)
+                {
+                    bool? isHide = If(universalFlowNodeAsset, flowPortIf.memberInfo, flowPortIf.hideIfAttribute.value);
+                    if (isHide == false) continue;
+
+                    portAssets.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        private bool? If(object thisObject, MemberInfo memberInfo, object value)
+        {
+            switch (memberInfo)
+            {
+                case FieldInfo fieldInfo:
+                {
+                    object fieldValue = fieldInfo.GetValue(thisObject);
+                    return fieldValue.Equals(value);
+                }
+
+                case PropertyInfo propertyInfo:
+                {
+                    if (propertyInfo.CanRead == false) return null;
+                    object propertyValue = propertyInfo.GetValue(thisObject, null);
+
+                    if (propertyInfo.PropertyType == typeof(bool)) { return (bool) propertyValue; }
+                    return propertyValue.Equals(value);
+                }
+
+                case MethodInfo methodInfo:
+                {
+                    if (methodInfo.ReturnType != typeof(bool)) return null;
+                    if (methodInfo.IsStatic) { return (bool) methodInfo.Invoke(null, new object[] { }); }
+                    return (bool) methodInfo.Invoke(thisObject, new object[] { });
+                }
+            }
+
+            return null;
         }
 
         private EditorPortInfo ToEditorPortInfo(string id, EditorPortDirection direction, Type portType, FlowPortGenerator flowPortGenerator)

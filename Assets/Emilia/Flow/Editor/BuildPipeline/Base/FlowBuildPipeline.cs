@@ -5,7 +5,7 @@ namespace Emilia.Flow.Editor
     [BuildPipeline(typeof(FlowBuildArgs))]
     public class FlowBuildPipeline : UniversalBuildPipeline
     {
-        private FlowBuildArgs flowBuildArgs;
+        protected FlowBuildArgs flowBuildArgs;
 
         protected override void RunInitialize()
         {

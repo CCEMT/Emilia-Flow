@@ -1,28 +1,34 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Emilia.Kit;
 using Emilia.Node.Editor;
+using Emilia.Node.Universal.Editor;
 using UnityEditor;
 using UnityEngine;
 
 namespace Emilia.Flow.Editor
 {
-    public class FlowGraphHandle : GraphHandle<EditorFlowAsset>
+    [EditorHandle(typeof(EditorFlowAsset))]
+    public class FlowGraphHandle : UniversalGraphHandle
     {
+        private EditorGraphView editorGraphView;
         private EditorFlowAsset editorFlowAsset;
         private EditorFlowRunner debugRunner;
         private List<EditorFlowNodeView> displayNodeViews = new List<EditorFlowNodeView>();
 
-        public override void Initialize(object weakSmartValue)
+        public override void Initialize(EditorGraphView graphView)
         {
-            base.Initialize(weakSmartValue);
-            editorFlowAsset = smartValue.graphAsset as EditorFlowAsset;
+            base.Initialize(graphView);
+            editorGraphView = graphView;
+            editorFlowAsset = graphView.graphAsset as EditorFlowAsset;
 
-            this.smartValue.RegisterCallback<GetFlowRunnerEvent>(OnGetFlowRunnerEvent);
-            this.smartValue.RegisterCallback<SetFlowRunnerEvent>(OnSetFlowRunnerEvent);
+            graphView.RegisterCallback<GetFlowRunnerEvent>(OnGetFlowRunnerEvent);
+            graphView.RegisterCallback<SetFlowRunnerEvent>(OnSetFlowRunnerEvent);
         }
 
-        public override void OnUpdate()
+        public override void OnUpdate(EditorGraphView graphView)
         {
+            base.OnUpdate(graphView);
             if (EditorApplication.isPlaying == false)
             {
                 ClearRunner();
@@ -31,7 +37,7 @@ namespace Emilia.Flow.Editor
 
             if (this.debugRunner == null)
             {
-                List<EditorFlowRunner> runners = EditorFlowRunner.runnerByAssetId.GetValueOrDefault(smartValue.graphAsset.id);
+                List<EditorFlowRunner> runners = EditorFlowRunner.runnerByAssetId.GetValueOrDefault(graphView.graphAsset.id);
                 if (runners != null && runners.Count == 1)
                 {
                     this.debugRunner = runners.FirstOrDefault(runner => runner.isActive);
@@ -40,8 +46,8 @@ namespace Emilia.Flow.Editor
             }
             else
             {
-                if (EditorFlowRunner.runnerByAssetId.ContainsKey(smartValue.graphAsset.id) == false) ClearRunner();
-                else if (EditorFlowRunner.runnerByAssetId[smartValue.graphAsset.id].Contains(this.debugRunner) == false) ClearRunner();
+                if (EditorFlowRunner.runnerByAssetId.ContainsKey(graphView.graphAsset.id) == false) ClearRunner();
+                else if (EditorFlowRunner.runnerByAssetId[graphView.graphAsset.id].Contains(this.debugRunner) == false) ClearRunner();
                 else if (debugRunner.isActive == false) ClearRunner();
             }
 
@@ -79,7 +85,7 @@ namespace Emilia.Flow.Editor
             {
                 FlowGraph machine = queue.Dequeue();
 
-                if (machine.graphAsset.id == smartValue.graphAsset.id)
+                if (machine.graphAsset.id == editorGraphView.graphAsset.id)
                 {
                     flow = machine;
                     break;
@@ -147,7 +153,7 @@ namespace Emilia.Flow.Editor
             string editorNodeId = editorFlowAsset.cacheEditorByRuntimeIdMap.GetValueOrDefault(nodeId);
             if (string.IsNullOrEmpty(editorNodeId)) return null;
 
-            IEditorNodeView nodeView = smartValue.graphElementCache.nodeViewById.GetValueOrDefault(editorNodeId);
+            IEditorNodeView nodeView = editorGraphView.graphElementCache.nodeViewById.GetValueOrDefault(editorNodeId);
             if (nodeView == null) return null;
 
             return nodeView as EditorFlowNodeView;
@@ -179,10 +185,10 @@ namespace Emilia.Flow.Editor
             if (this.debugRunner == null) return;
             this.debugRunner = null;
 
-            int nodeViewCount = smartValue.nodeViews.Count;
+            int nodeViewCount = editorGraphView.nodeViews.Count;
             for (var i = 0; i < nodeViewCount; i++)
             {
-                IEditorNodeView nodeView = smartValue.nodeViews[i];
+                IEditorNodeView nodeView = editorGraphView.nodeViews[i];
                 if (nodeView == null) continue;
 
                 EditorFlowNodeView flowNodeView = nodeView as EditorFlowNodeView;

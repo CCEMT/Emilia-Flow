@@ -1,30 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using Emilia.Kit;
 using Emilia.Node.Editor;
+using Emilia.Node.Universal.Editor;
 
 namespace Emilia.Flow.Editor
 {
-    public class FlowCreateNodeMenuHandle : CreateNodeMenuHandle<EditorFlowAsset>
+    [EditorHandle(typeof(EditorFlowAsset))]
+    public class FlowCreateNodeMenuHandle : UniversalCreateNodeMenuHandle
     {
         private EditorFlowAsset flowAsset;
 
-        public override void InitializeCache()
+        public override void InitializeCache(EditorGraphView graphView, List<ICreateNodeHandle> createNodeHandles)
         {
-            base.InitializeCache();
-            flowAsset = smartValue.graphAsset as EditorFlowAsset;
-            FilterCreateNodeHandles();
+            base.InitializeCache(graphView, createNodeHandles);
+            flowAsset = graphView.graphAsset as EditorFlowAsset;
+            FilterCreateNodeHandles(graphView);
         }
 
-        private void FilterCreateNodeHandles()
+        private void FilterCreateNodeHandles(EditorGraphView graphView)
         {
-            int cacheAmount = smartValue.createNodeMenu.createNodeHandleCacheList.Count;
+            int cacheAmount = graphView.createNodeMenu.createNodeHandleCacheList.Count;
             for (int i = cacheAmount - 1; i >= 0; i--)
             {
-                ICreateNodeHandle createNodeHandle = smartValue.createNodeMenu.createNodeHandleCacheList[i];
+                ICreateNodeHandle createNodeHandle = graphView.createNodeMenu.createNodeHandleCacheList[i];
 
                 object nodeData = createNodeHandle.nodeData;
                 if (nodeData == null) continue;
                 if (IsContain(nodeData.GetType())) continue;
-                smartValue.createNodeMenu.createNodeHandleCacheList.RemoveAt(i);
+                graphView.createNodeMenu.createNodeHandleCacheList.RemoveAt(i);
             }
         }
 

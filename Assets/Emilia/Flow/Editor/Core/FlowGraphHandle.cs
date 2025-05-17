@@ -2,13 +2,14 @@
 using System.Linq;
 using Emilia.Kit;
 using Emilia.Node.Editor;
+using Emilia.Node.Universal.Editor;
 using UnityEditor;
 using UnityEngine;
 
 namespace Emilia.Flow.Editor
 {
     [EditorHandle(typeof(EditorFlowAsset))]
-    public class FlowGraphHandle : GraphHandle
+    public class FlowGraphHandle : UniversalGraphHandle
     {
         private EditorGraphView editorGraphView;
         private EditorFlowAsset editorFlowAsset;

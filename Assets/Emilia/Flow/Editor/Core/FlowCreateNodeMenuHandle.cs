@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Emilia.Kit;
 using Emilia.Node.Editor;
+using Emilia.Node.Universal.Editor;
 
 namespace Emilia.Flow.Editor
 {
     [EditorHandle(typeof(EditorFlowAsset))]
-    public class FlowCreateNodeMenuHandle : CreateNodeMenuHandle
+    public class FlowCreateNodeMenuHandle : UniversalCreateNodeMenuHandle
     {
         private EditorFlowAsset flowAsset;
 

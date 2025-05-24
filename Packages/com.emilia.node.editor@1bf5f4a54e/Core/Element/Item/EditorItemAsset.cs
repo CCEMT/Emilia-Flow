@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using Emilia.Kit;
+using Emilia.Kit.Editor;
+using Sirenix.OdinInspector.Editor;
+using UnityEngine;
+using Object = UnityEngine.Object;
+
+namespace Emilia.Node.Editor
+{
+    [Serializable, SelectedClear]
+    public abstract class EditorItemAsset : TitleAsset, IUnityAsset
+    {
+        [SerializeField, HideInInspector]
+        private string _id;
+
+        [SerializeField, HideInInspector]
+        private Rect _position;
+
+        [SerializeField, HideInInspector]
+        private EditorGraphAsset _graphAsset;
+
+        [NonSerialized]
+        private PropertyTree _propertyTree;
+
+        /// <summary>
+        /// Id
+        /// </summary>
+        public string id
+        {
+            get => this._id;
+            set => this._id = value;
+        }
+
+        /// <summary>
+        /// 位置
+        /// </summary>
+        public Rect position
+        {
+            get => this._position;
+            set => this._position = value;
+        }
+
+        public EditorGraphAsset graphAsset
+        {
+            get => this._graphAsset;
+            set => this._graphAsset = value;
+        }
+
+        public PropertyTree propertyTree => _propertyTree;
+
+        protected virtual void OnEnable()
+        {
+            if (_propertyTree != null) _propertyTree.Dispose();
+            _propertyTree = PropertyTree.Create(this);
+        }
+
+        public virtual void SetChildren(List<Object> childAssets) { }
+        public virtual List<Object> GetChildren() => null;
+
+        protected virtual void OnDisable()
+        {
+            _propertyTree?.Dispose();
+            _propertyTree = null;
+        }
+    }
+}

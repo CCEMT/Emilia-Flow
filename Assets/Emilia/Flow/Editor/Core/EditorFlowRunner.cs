@@ -19,6 +19,7 @@ namespace Emilia.Flow.Editor
 
         private object owner;
 
+        private string assetId;
         private FlowGraph _flowGraph;
 
         public int uid { get; private set; } = -1;
@@ -53,6 +54,7 @@ namespace Emilia.Flow.Editor
             _flowGraph = new FlowGraph();
             _flowGraph.Init(uid, graphAsset, owner);
 
+            assetId = graphAsset.id;
             if (_runnerByAssetId.ContainsKey(graphAsset.id) == false) _runnerByAssetId[graphAsset.id] = new List<EditorFlowRunner>();
             _runnerByAssetId[graphAsset.id].Add(this);
 
@@ -115,7 +117,7 @@ namespace Emilia.Flow.Editor
 
                 if (this._flowGraph == null) return;
 
-                if (_runnerByAssetId.ContainsKey(this.asset.id)) _runnerByAssetId[asset.id].Remove(this);
+                if (_runnerByAssetId.ContainsKey(assetId)) _runnerByAssetId[assetId].Remove(this);
 
                 if (isActive) this._flowGraph.Dispose();
                 this._flowGraph = null;

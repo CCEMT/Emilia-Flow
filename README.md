@@ -107,8 +107,7 @@ Odin版本：3.1.2+
 
 ## 例子
 
-是基于Emilia-Flow实现的Unity类守望先锋Statescript编辑器 [Statescript](https://github.com/CCEMT/Emilia-Statescript)
-![statescript](./doc/statescript.gif)
+是基于Emilia-Flow实现的Unity类守望先锋Statescript编辑器
 
 ## 开始
 

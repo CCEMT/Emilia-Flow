@@ -1,0 +1,4703 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9191368359265965592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.SetPlayerColorActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: 12212684-ba7a-4696-8cce-3800b15e90a9
+  _position:
+    serializedVersion: 2
+    x: 870
+    y: 222
+    width: 118
+    height: 68
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &-7927997579212810404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.VariableComparisonStatescriptConditionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftKey
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: compareOperator
+      Entry: 3
+      Data: 0
+    - Name: useDefine
+      Entry: 5
+      Data: true
+    - Name: rightDefineValue
+      Entry: 7
+      Data: 3|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: rightKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: 7113f6d4-6c42-4699-9e03-7426d20939ca
+  _position:
+    serializedVersion: 2
+    x: 638.39996
+    y: 496.8001
+    width: 105.599976
+    height: 92
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &-6395292270436340070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 92459ca4-dcdd-4924-8b55-9dc37e2a7320
+  _outputNodeId: d0de61a6-8b2d-4e55-9753-d868b9b9fcfb
+  _inputNodeId: 7113f6d4-6c42-4699-9e03-7426d20939ca
+  _outputPortId: OnOutput
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &-5664666123589444310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: b86bbcaf-e7db-402c-949e-398ddbc85bcd
+  _outputNodeId: 7113f6d4-6c42-4699-9e03-7426d20939ca
+  _inputNodeId: ac0099f7-d91c-49a4-8ca8-247a3536997c
+  _outputPortId: OnFalse
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &-5389270326157107204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.JoyStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: joyValueKey
+      Entry: 1
+      Data: 07a77b39-e5b1-45fc-b71d-cb83939e8f15
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: f62194dd-4e8a-4f17-8479-6f58e87e78da
+  _position:
+    serializedVersion: 2
+    x: 148.80005
+    y: 689.48004
+    width: 171.99998
+    height: 188
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &-4395550880577035253
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 67854808-f67e-4d93-9ef6-8988b5901742
+  _outputNodeId: 7113f6d4-6c42-4699-9e03-7426d20939ca
+  _inputNodeId: fc37cd5c-367e-4821-9870-26af290888f6
+  _outputPortId: OnTrue
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &-3905940416249278002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 817ff545-5b2e-4ac5-a6ac-1c14b7bf204d
+  _outputNodeId: 3e02d335-d3fd-4c90-b5f5-93dd1f6cdc63
+  _inputNodeId: 58ce155c-1c70-4d53-bd06-567bac3a3c76
+  _outputPortId: OnFinish
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &-2845806086646962516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 5f13b43c-fcf2-4ef8-9865-68d1705e1036
+  _outputNodeId: f62194dd-4e8a-4f17-8479-6f58e87e78da
+  _inputNodeId: f01ec956-016e-4e86-b83a-6c97f1e70943
+  _outputPortId: OnTick
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &-516274810257441037
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.WaitStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: time
+      Entry: 4
+      Data: 0.15
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: 838fb593-0a78-4fd0-860a-24e7016fab46
+  _position:
+    serializedVersion: 2
+    x: 437.99997
+    y: -24.999987
+    width: 129
+    height: 164
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &-182516693394491249
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.WaitStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: time
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: 3e02d335-d3fd-4c90-b5f5-93dd1f6cdc63
+  _position:
+    serializedVersion: 2
+    x: 438.3501
+    y: 199
+    width: 129
+    height: 164
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148afce192534f54bae9b451daf2abaa, type: 3}
+  m_Name: EditorStatescriptAsset
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 2684563332845617098}
+    - {fileID: -5389270326157107204}
+    - {fileID: 2304579230899321042}
+    - {fileID: 468605017502418600}
+    - {fileID: -182516693394491249}
+    - {fileID: -516274810257441037}
+    - {fileID: 7649174571794195672}
+    - {fileID: 20452074131982728}
+    - {fileID: -9191368359265965592}
+    - {fileID: -7927997579212810404}
+    - {fileID: 4091434567067101173}
+    - {fileID: 8498146427904722420}
+    - {fileID: 2119683920594616724}
+    - {fileID: 7126510547018345766}
+    - {fileID: 6065320107708904436}
+    - {fileID: -2845806086646962516}
+    - {fileID: 7882082103283867017}
+    - {fileID: 2744348038080907601}
+    - {fileID: 6902235262699081696}
+    - {fileID: 993926415297449627}
+    - {fileID: -3905940416249278002}
+    - {fileID: 1711514793083828587}
+    - {fileID: 8453148912346579186}
+    - {fileID: -4395550880577035253}
+    - {fileID: -5664666123589444310}
+    - {fileID: -6395292270436340070}
+    - {fileID: 6030884702471538542}
+    - {fileID: 8217423019113631446}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _nodes
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Emilia.Node.Editor.EditorNodeAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _edges
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Node.Editor.EditorEdgeAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _items
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Node.Editor.EditorItemAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _nodeMap
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Emilia.Node.Editor.EditorNodeAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 14
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 7a49c410-826f-4800-8cbc-aa4d0e51cc82
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: f62194dd-4e8a-4f17-8479-6f58e87e78da
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: f01ec956-016e-4e86-b83a-6c97f1e70943
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 3e02d335-d3fd-4c90-b5f5-93dd1f6cdc63
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 838fb593-0a78-4fd0-860a-24e7016fab46
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: db3079e1-daa7-430d-855d-723cbbd41c49
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 58ce155c-1c70-4d53-bd06-567bac3a3c76
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 12212684-ba7a-4696-8cce-3800b15e90a9
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 7113f6d4-6c42-4699-9e03-7426d20939ca
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: fc37cd5c-367e-4821-9870-26af290888f6
+    - Name: $v
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ac0099f7-d91c-49a4-8ca8-247a3536997c
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: d0de61a6-8b2d-4e55-9753-d868b9b9fcfb
+    - Name: $v
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: a4c6bd7d-5fde-4ff8-880a-079a9a5cb451
+    - Name: $v
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _edgeMap
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Emilia.Node.Editor.EditorEdgeAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 13
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 087f3bf6-4e2e-4eae-b3ad-f6cc48777715
+    - Name: $v
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5f13b43c-fcf2-4ef8-9865-68d1705e1036
+    - Name: $v
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: bb0fd7f1-d51e-48b0-aab5-c20f47c678cd
+    - Name: $v
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 1b0620ea-7a80-4f24-82c4-5d970ec582a4
+    - Name: $v
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 034103ce-65bf-4146-81b3-f03aadfbc09f
+    - Name: $v
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: b3378427-b002-444f-bc04-a9353cfb9325
+    - Name: $v
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 817ff545-5b2e-4ac5-a6ac-1c14b7bf204d
+    - Name: $v
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: b5db5084-45e3-43a2-ab6d-d3f2b65d2c55
+    - Name: $v
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 340877fa-a95e-4d5f-a71c-66c45676619a
+    - Name: $v
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 67854808-f67e-4d93-9ef6-8988b5901742
+    - Name: $v
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: b86bbcaf-e7db-402c-949e-398ddbc85bcd
+    - Name: $v
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 075745a7-4f35-4ece-80db-cfeb887d72ca
+    - Name: $v
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 92459ca4-dcdd-4924-8b55-9dc37e2a7320
+    - Name: $v
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _itemMap
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Emilia.Node.Editor.EditorItemAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _parent
+      Entry: 6
+      Data: 
+    - Name: _children
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Emilia.Node.Editor.EditorGraphAsset,
+        Emilia.Node.Editor]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: editorParametersManage
+      Entry: 10
+      Data: 27
+    - Name: cache
+      Entry: 7
+      Data: 8|Emilia.Flow.FlowGraphAsset, Emilia.Flow
+    - Name: _id
+      Entry: 1
+      Data: cd4d1d0b-a9d4-4323-a85a-6f4cd5e60f57
+    - Name: _description
+      Entry: 1
+      Data: 
+    - Name: _nodes
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Emilia.Flow.FlowNodeAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 14
+    - Name: 
+      Entry: 7
+      Data: 10|Emilia.Statescript.MainStatescriptEntryAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 1
+    - Name: _inputPorts
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 13|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|Emilia.Statescript.JoyStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 2
+    - Name: _inputPorts
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 17|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Start
+    - Name: _edgeIds
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Abort
+    - Name: _edgeIds
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 22|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnTick
+    - Name: _edgeIds
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnNone
+    - Name: _edgeIds
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnStart
+    - Name: _edgeIds
+      Entry: 7
+      Data: 29|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 30|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnSub
+    - Name: _edgeIds
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnEnd
+    - Name: _edgeIds
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: joyValueKey
+      Entry: 1
+      Data: 07a77b39-e5b1-45fc-b71d-cb83939e8f15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|Emilia.Statescript.SetPlayerMoveDirectionActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 3
+    - Name: _inputPorts
+      Entry: 7
+      Data: 35|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 36|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 37|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 38|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 39|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 40|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: key
+      Entry: 1
+      Data: 07a77b39-e5b1-45fc-b71d-cb83939e8f15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 41|Emilia.Statescript.ButtonStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 4
+    - Name: _inputPorts
+      Entry: 7
+      Data: 42|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 43|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Start
+    - Name: _edgeIds
+      Entry: 7
+      Data: 44|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 45|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Abort
+    - Name: _edgeIds
+      Entry: 7
+      Data: 46|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 47|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 48|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnStart
+    - Name: _edgeIds
+      Entry: 7
+      Data: 49|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 50|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnTick
+    - Name: _edgeIds
+      Entry: 7
+      Data: 51|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 52|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnDown
+    - Name: _edgeIds
+      Entry: 7
+      Data: 53|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 54|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnUp
+    - Name: _edgeIds
+      Entry: 7
+      Data: 55|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 56|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnSub
+    - Name: _edgeIds
+      Entry: 7
+      Data: 57|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 58|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnEnd
+    - Name: _edgeIds
+      Entry: 7
+      Data: 59|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: keyCode
+      Entry: 3
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 60|Emilia.Statescript.WaitStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 5
+    - Name: _inputPorts
+      Entry: 7
+      Data: 61|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 62|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Start
+    - Name: _edgeIds
+      Entry: 7
+      Data: 63|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 64|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Abort
+    - Name: _edgeIds
+      Entry: 7
+      Data: 65|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 66|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 67|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnStart
+    - Name: _edgeIds
+      Entry: 7
+      Data: 68|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 69|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnFinish
+    - Name: _edgeIds
+      Entry: 7
+      Data: 70|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 71|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnTick
+    - Name: _edgeIds
+      Entry: 7
+      Data: 72|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 73|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnSub
+    - Name: _edgeIds
+      Entry: 7
+      Data: 74|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 75|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnEnd
+    - Name: _edgeIds
+      Entry: 7
+      Data: 76|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: time
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 77|Emilia.Statescript.WaitStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 6
+    - Name: _inputPorts
+      Entry: 7
+      Data: 78|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 79|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Start
+    - Name: _edgeIds
+      Entry: 7
+      Data: 80|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 81|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: Abort
+    - Name: _edgeIds
+      Entry: 7
+      Data: 82|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 83|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 84|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnStart
+    - Name: _edgeIds
+      Entry: 7
+      Data: 85|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 86|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnFinish
+    - Name: _edgeIds
+      Entry: 7
+      Data: 87|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 88|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnTick
+    - Name: _edgeIds
+      Entry: 7
+      Data: 89|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 90|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnSub
+    - Name: _edgeIds
+      Entry: 7
+      Data: 91|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 92|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnEnd
+    - Name: _edgeIds
+      Entry: 7
+      Data: 93|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: time
+      Entry: 4
+      Data: 0.15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 94|Emilia.Statescript.SetPlayerColorActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 7
+    - Name: _inputPorts
+      Entry: 7
+      Data: 95|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 96|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 97|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 98|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 99|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 100|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 101|Emilia.Statescript.SetVariableStatescriptActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 8
+    - Name: _inputPorts
+      Entry: 7
+      Data: 102|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 103|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 104|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 105|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 106|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 107|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftKey
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: calculateOperator
+      Entry: 3
+      Data: 0
+    - Name: useDefine
+      Entry: 5
+      Data: true
+    - Name: rightDefineValue
+      Entry: 7
+      Data: 108|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: rightKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 109|Emilia.Statescript.SetPlayerColorActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 9
+    - Name: _inputPorts
+      Entry: 7
+      Data: 110|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 111|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 112|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 113|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 114|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 115|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 116|Emilia.Statescript.VariableComparisonStatescriptConditionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 10
+    - Name: _inputPorts
+      Entry: 7
+      Data: 117|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 118|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 119|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 120|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 121|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnTrue
+    - Name: _edgeIds
+      Entry: 7
+      Data: 122|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 123|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnFalse
+    - Name: _edgeIds
+      Entry: 7
+      Data: 124|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 11
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftKey
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: compareOperator
+      Entry: 3
+      Data: 0
+    - Name: useDefine
+      Entry: 5
+      Data: true
+    - Name: rightDefineValue
+      Entry: 7
+      Data: 125|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: rightKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 126|Emilia.Statescript.PlayerAttackActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 11
+    - Name: _inputPorts
+      Entry: 7
+      Data: 127|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 128|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 129|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 130|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 131|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 132|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 13
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isHeavy
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 133|Emilia.Statescript.PlayerAttackActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 12
+    - Name: _inputPorts
+      Entry: 7
+      Data: 134|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 135|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 136|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 11
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 137|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 138|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 139|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isHeavy
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 140|Emilia.Statescript.SetPlayerColorActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 13
+    - Name: _inputPorts
+      Entry: 7
+      Data: 141|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 142|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 143|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 144|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 145|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 146|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 147|Emilia.Statescript.SetVariableStatescriptActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 14
+    - Name: _inputPorts
+      Entry: 7
+      Data: 148|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 149|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnInput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 150|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 13
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 151|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 152|Emilia.Flow.FlowPortAsset, Emilia.Flow
+    - Name: _portName
+      Entry: 1
+      Data: OnOutput
+    - Name: _edgeIds
+      Entry: 7
+      Data: 153|System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftKey
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: calculateOperator
+      Entry: 3
+      Data: 0
+    - Name: useDefine
+      Entry: 5
+      Data: true
+    - Name: rightDefineValue
+      Entry: 7
+      Data: 154|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: rightKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _edges
+      Entry: 7
+      Data: 155|System.Collections.Generic.List`1[[Emilia.Flow.FlowEdgeAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 13
+    - Name: 
+      Entry: 7
+      Data: 156|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 6
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 7
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 6
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnFinish
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 157|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 5
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 6
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 4
+    - Name: _inputPortName
+      Entry: 1
+      Data: Start
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnDown
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 158|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 7
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 8
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 5
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnFinish
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 159|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 8
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 9
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 8
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnOutput
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 160|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 4
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 5
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 4
+    - Name: _inputPortName
+      Entry: 1
+      Data: Start
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnDown
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 161|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 9
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 13
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 4
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnUp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 162|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 3
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 4
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 1
+    - Name: _inputPortName
+      Entry: 1
+      Data: Start
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnOutput
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 163|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 13
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 14
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 11
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnOutput
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 164|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 10
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 11
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 10
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnTrue
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 165|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 12
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 10
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 13
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnOutput
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 166|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 11
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 12
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 10
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnFalse
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 167|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 1
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 2
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 1
+    - Name: _inputPortName
+      Entry: 1
+      Data: Start
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnOutput
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 168|Emilia.Flow.FlowEdgeAsset, Emilia.Flow
+    - Name: _id
+      Entry: 3
+      Data: 2
+    - Name: _inputNodeId
+      Entry: 3
+      Data: 3
+    - Name: _outputNodeId
+      Entry: 3
+      Data: 2
+    - Name: _inputPortName
+      Entry: 1
+      Data: OnInput
+    - Name: _outputPortName
+      Entry: 1
+      Data: OnTick
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _variablesManage
+      Entry: 7
+      Data: 169|Emilia.Variables.VariablesManage, Emilia.Variable
+    - Name: _variableMap
+      Entry: 7
+      Data: 170|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Emilia.Variables.Variable,
+        Emilia.Variable]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 171|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: $v
+      Entry: 7
+      Data: 172|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 07a77b39-e5b1-45fc-b71d-cb83939e8f15
+    - Name: $v
+      Entry: 7
+      Data: 173|Emilia.Variables.VariableVector2, Emilia.Variable
+    - Name: _value
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _userData
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cacheEditorByRuntimeIdMap
+      Entry: 7
+      Data: 174|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 175|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 14
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 1
+      Data: 7a49c410-826f-4800-8cbc-aa4d0e51cc82
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 1
+      Data: f62194dd-4e8a-4f17-8479-6f58e87e78da
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 1
+      Data: f01ec956-016e-4e86-b83a-6c97f1e70943
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 1
+      Data: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 1
+      Data: 3e02d335-d3fd-4c90-b5f5-93dd1f6cdc63
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 1
+      Data: 838fb593-0a78-4fd0-860a-24e7016fab46
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 1
+      Data: db3079e1-daa7-430d-855d-723cbbd41c49
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 1
+      Data: 58ce155c-1c70-4d53-bd06-567bac3a3c76
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 9
+    - Name: $v
+      Entry: 1
+      Data: 12212684-ba7a-4696-8cce-3800b15e90a9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: 7113f6d4-6c42-4699-9e03-7426d20939ca
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 1
+      Data: fc37cd5c-367e-4821-9870-26af290888f6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 1
+      Data: ac0099f7-d91c-49a4-8ca8-247a3536997c
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 1
+      Data: d0de61a6-8b2d-4e55-9753-d868b9b9fcfb
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 1
+      Data: a4c6bd7d-5fde-4ff8-880a-079a9a5cb451
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cacheRuntimeByEditorIdMap
+      Entry: 7
+      Data: 176|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 171
+    - Name: 
+      Entry: 12
+      Data: 14
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 7a49c410-826f-4800-8cbc-aa4d0e51cc82
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: f62194dd-4e8a-4f17-8479-6f58e87e78da
+    - Name: $v
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: f01ec956-016e-4e86-b83a-6c97f1e70943
+    - Name: $v
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+    - Name: $v
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 3e02d335-d3fd-4c90-b5f5-93dd1f6cdc63
+    - Name: $v
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 838fb593-0a78-4fd0-860a-24e7016fab46
+    - Name: $v
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: db3079e1-daa7-430d-855d-723cbbd41c49
+    - Name: $v
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 58ce155c-1c70-4d53-bd06-567bac3a3c76
+    - Name: $v
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 12212684-ba7a-4696-8cce-3800b15e90a9
+    - Name: $v
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 7113f6d4-6c42-4699-9e03-7426d20939ca
+    - Name: $v
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: fc37cd5c-367e-4821-9870-26af290888f6
+    - Name: $v
+      Entry: 3
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ac0099f7-d91c-49a4-8ca8-247a3536997c
+    - Name: $v
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: d0de61a6-8b2d-4e55-9753-d868b9b9fcfb
+    - Name: $v
+      Entry: 3
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: a4c6bd7d-5fde-4ff8-880a-079a9a5cb451
+    - Name: $v
+      Entry: 3
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: cd4d1d0b-a9d4-4323-a85a-6f4cd5e60f57
+  description: 
+--- !u!114 &20452074131982728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.SetVariableStatescriptActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftKey
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: calculateOperator
+      Entry: 3
+      Data: 0
+    - Name: useDefine
+      Entry: 5
+      Data: true
+    - Name: rightDefineValue
+      Entry: 7
+      Data: 3|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: rightKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: 58ce155c-1c70-4d53-bd06-567bac3a3c76
+  _position:
+    serializedVersion: 2
+    x: 657.6
+    y: 222.4
+    width: 116.79999
+    height: 68.000015
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &468605017502418600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.ButtonStatescriptStateAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: keyCode
+      Entry: 3
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+  _position:
+    serializedVersion: 2
+    x: 137.95
+    y: 345.99988
+    width: 162
+    height: 188
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &993926415297449627
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: b3378427-b002-444f-bc04-a9353cfb9325
+  _outputNodeId: 838fb593-0a78-4fd0-860a-24e7016fab46
+  _inputNodeId: db3079e1-daa7-430d-855d-723cbbd41c49
+  _outputPortId: OnFinish
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &1711514793083828587
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: b5db5084-45e3-43a2-ab6d-d3f2b65d2c55
+  _outputNodeId: 58ce155c-1c70-4d53-bd06-567bac3a3c76
+  _inputNodeId: 12212684-ba7a-4696-8cce-3800b15e90a9
+  _outputPortId: OnOutput
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &2119683920594616724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.SetPlayerColorActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: d0de61a6-8b2d-4e55-9753-d868b9b9fcfb
+  _position:
+    serializedVersion: 2
+    x: 435.2
+    y: 496.8
+    width: 116.79999
+    height: 68
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &2304579230899321042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.SetPlayerMoveDirectionActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: key
+      Entry: 1
+      Data: 07a77b39-e5b1-45fc-b71d-cb83939e8f15
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: f01ec956-016e-4e86-b83a-6c97f1e70943
+  _position:
+    serializedVersion: 2
+    x: 435.05206
+    y: 766.70013
+    width: 118
+    height: 68
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &2684563332845617098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.MainStatescriptEntryAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: 7a49c410-826f-4800-8cbc-aa4d0e51cc82
+  _position:
+    serializedVersion: 2
+    x: 20.227821
+    y: 534.0136
+    width: 100
+    height: 100
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &2744348038080907601
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 1b0620ea-7a80-4f24-82c4-5d970ec582a4
+  _outputNodeId: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+  _inputNodeId: 3e02d335-d3fd-4c90-b5f5-93dd1f6cdc63
+  _outputPortId: OnDown
+  _inputPortId: Start
+  _graphAsset: {fileID: 0}
+--- !u!114 &4091434567067101173
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.PlayerAttackActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isHeavy
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: fc37cd5c-367e-4821-9870-26af290888f6
+  _position:
+    serializedVersion: 2
+    x: 816
+    y: 452.80002
+    width: 116.79999
+    height: 68.00003
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &6030884702471538542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 075745a7-4f35-4ece-80db-cfeb887d72ca
+  _outputNodeId: fc37cd5c-367e-4821-9870-26af290888f6
+  _inputNodeId: a4c6bd7d-5fde-4ff8-880a-079a9a5cb451
+  _outputPortId: OnOutput
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &6065320107708904436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 087f3bf6-4e2e-4eae-b3ad-f6cc48777715
+  _outputNodeId: 7a49c410-826f-4800-8cbc-aa4d0e51cc82
+  _inputNodeId: f62194dd-4e8a-4f17-8479-6f58e87e78da
+  _outputPortId: OnOutput
+  _inputPortId: Start
+  _graphAsset: {fileID: 0}
+--- !u!114 &6275193511267409251
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae6a425e7084945854870147d853e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: parameters
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Emilia.Node.Universal.Editor.EditorParameter,
+        Emilia.Node.Universal.Editor]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|Emilia.Node.Universal.Editor.EditorParameter, Emilia.Node.Universal.Editor
+    - Name: key
+      Entry: 1
+      Data: ab789766-9753-4b7f-8158-a8112a529b4a
+    - Name: description
+      Entry: 1
+      Data: "\u6447\u6746\u8F93\u5165"
+    - Name: value
+      Entry: 7
+      Data: 2|Emilia.Variables.VariableVector2, Emilia.Variable
+    - Name: _value
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Emilia.Node.Universal.Editor.EditorParameter, Emilia.Node.Universal.Editor
+    - Name: key
+      Entry: 1
+      Data: 9efe4007-1fc3-415f-830d-e071eb615e8e
+    - Name: description
+      Entry: 1
+      Data: "\u84C4\u529B\u653B\u51FB"
+    - Name: value
+      Entry: 7
+      Data: 4|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!114 &6902235262699081696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 034103ce-65bf-4146-81b3-f03aadfbc09f
+  _outputNodeId: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+  _inputNodeId: 838fb593-0a78-4fd0-860a-24e7016fab46
+  _outputPortId: OnDown
+  _inputPortId: Start
+  _graphAsset: {fileID: 0}
+--- !u!114 &7126510547018345766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.SetVariableStatescriptActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftKey
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: calculateOperator
+      Entry: 3
+      Data: 0
+    - Name: useDefine
+      Entry: 5
+      Data: true
+    - Name: rightDefineValue
+      Entry: 7
+      Data: 3|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: rightKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: a4c6bd7d-5fde-4ff8-880a-079a9a5cb451
+  _position:
+    serializedVersion: 2
+    x: 1022.39996
+    y: 452.80002
+    width: 116.79993
+    height: 67.99997
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &7649174571794195672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.SetPlayerColorActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: db3079e1-daa7-430d-855d-723cbbd41c49
+  _position:
+    serializedVersion: 2
+    x: 676.3002
+    y: -58.999985
+    width: 118
+    height: 68
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1
+--- !u!114 &7882082103283867017
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: bb0fd7f1-d51e-48b0-aab5-c20f47c678cd
+  _outputNodeId: 7a49c410-826f-4800-8cbc-aa4d0e51cc82
+  _inputNodeId: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+  _outputPortId: OnOutput
+  _inputPortId: Start
+  _graphAsset: {fileID: 0}
+--- !u!114 &8217423019113631446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c7224fffdf4b3d83102379134037a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: parameters
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Emilia.Variables.Editor.EditorParameter,
+        Emilia.Variable.Editor]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|Emilia.Variables.Editor.EditorParameter, Emilia.Variable.Editor
+    - Name: key
+      Entry: 1
+      Data: c4a4ee61-045a-4175-b2f9-8ce92cb49c0a
+    - Name: description
+      Entry: 1
+      Data: "\u91CD\u51FB"
+    - Name: value
+      Entry: 7
+      Data: 2|Emilia.Variables.VariableBoolean, Emilia.Variable
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Emilia.Variables.Editor.EditorParameter, Emilia.Variable.Editor
+    - Name: key
+      Entry: 1
+      Data: 07a77b39-e5b1-45fc-b71d-cb83939e8f15
+    - Name: description
+      Entry: 1
+      Data: "\u9065\u611F\u8F93\u5165"
+    - Name: value
+      Entry: 7
+      Data: 4|Emilia.Variables.VariableVector2, Emilia.Variable
+    - Name: _value
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!114 &8453148912346579186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea6614a3484b77981400fed0cfb405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 6
+      Data: 
+  _id: 340877fa-a95e-4d5f-a71c-66c45676619a
+  _outputNodeId: fd6c1f19-732d-4962-b74d-f3bae493cd7e
+  _inputNodeId: d0de61a6-8b2d-4e55-9753-d868b9b9fcfb
+  _outputPortId: OnUp
+  _inputPortId: OnInput
+  _graphAsset: {fileID: 0}
+--- !u!114 &8498146427904722420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d2e8519ab646a9a9450bc3cb51795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _userData
+      Entry: 7
+      Data: 0|Emilia.Statescript.PlayerAttackActionAsset, Emilia.Statescript
+    - Name: id
+      Entry: 3
+      Data: 0
+    - Name: _inputPorts
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _outputPorts
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Emilia.Flow.FlowPortAsset, Emilia.Flow]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isHeavy
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+  _id: ac0099f7-d91c-49a4-8ca8-247a3536997c
+  _position:
+    serializedVersion: 2
+    x: 816.00006
+    y: 601.6
+    width: 116.79999
+    height: 68
+  _graphAsset: {fileID: 0}
+  _displayName: 
+  _isFold: 1

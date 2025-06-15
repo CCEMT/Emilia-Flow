@@ -3,7 +3,7 @@
 namespace Emilia.Flow.Attributes
 {
     /// <summary>
-    /// 端口菜单
+    /// 节点菜单
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public class FlowNodeMenuAttribute : Attribute

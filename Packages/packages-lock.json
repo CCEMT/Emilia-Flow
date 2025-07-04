@@ -9,7 +9,7 @@
       }
     },
     "com.emilia.node.editor": {
-      "version": "file:com.emilia.node.editor@e60b67a95b",
+      "version": "file:com.emilia.node.editor@0154199b8b",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

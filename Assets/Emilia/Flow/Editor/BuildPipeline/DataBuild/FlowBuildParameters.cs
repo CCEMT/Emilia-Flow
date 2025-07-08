@@ -7,14 +7,15 @@ namespace Emilia.Flow.Editor
     [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(1000)]
     public class FlowBuildParameters : IDataBuild
     {
-        public void Build(IBuildContainer buildContainer, Action onFinished)
+        public void Build(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)
         {
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
+            FlowBuildArgs flowBuildArgs = buildArgs as FlowBuildArgs;
 
-            if (container.editorFlowAsset.editorParametersManage == null) container.variablesManage = new VariablesManage();
+            if (flowBuildArgs.flowAsset.editorParametersManage == null) container.variablesManage = new VariablesManage();
             else
             {
-                VariablesManage rootVariablesManage = container.editorFlowAsset.editorParametersManage.ToParametersManage();
+                VariablesManage rootVariablesManage = flowBuildArgs.flowAsset.editorParametersManage.ToParametersManage();
                 container.variablesManage = rootVariablesManage;
             }
 

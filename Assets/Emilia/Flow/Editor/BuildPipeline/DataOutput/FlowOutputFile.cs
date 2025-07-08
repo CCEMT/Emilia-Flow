@@ -24,7 +24,7 @@ namespace Emilia.Flow.Editor
             }
 
             string dataPathNoAssets = Directory.GetParent(Application.dataPath).ToString();
-            string path = $"{dataPathNoAssets}/{args.outputPath}/{container.editorFlowAsset.name}.bytes";
+            string path = $"{dataPathNoAssets}/{args.outputPath}/{args.flowAsset.name}.bytes";
 
             Task.Run(() => {
                 if (File.Exists(path)) File.Delete(path);

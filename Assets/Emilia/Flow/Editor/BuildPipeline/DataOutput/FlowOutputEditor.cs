@@ -10,12 +10,13 @@ namespace Emilia.Flow.Editor
         public void Output(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)
         {
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
+            FlowBuildArgs flowBuildArgs = buildArgs as FlowBuildArgs;
 
-            container.editorFlowAsset.cache = container.flowGraphAsset;
-            container.editorFlowAsset.cacheEditorByRuntimeIdMap = container.editorByRuntimeMap;
-            container.editorFlowAsset.cacheRuntimeByEditorIdMap = container.runtimeByEditorMap;
+            flowBuildArgs.flowAsset.cache = container.flowGraphAsset;
+            flowBuildArgs.flowAsset.cacheEditorByRuntimeIdMap = container.editorByRuntimeMap;
+            flowBuildArgs.flowAsset.cacheRuntimeByEditorIdMap = container.runtimeByEditorMap;
 
-            container.editorFlowAsset.SaveAll();
+            flowBuildArgs.flowAsset.SaveAll();
 
             onFinished.Invoke();
         }

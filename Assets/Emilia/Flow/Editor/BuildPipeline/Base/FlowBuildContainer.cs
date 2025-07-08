@@ -4,10 +4,9 @@ using Emilia.Variables;
 
 namespace Emilia.Flow.Editor
 {
+    [BuildPipeline(typeof(FlowBuildArgs))]
     public class FlowBuildContainer : BuildContainer
     {
-        public EditorFlowAsset editorFlowAsset { get; set; }
-
         public Dictionary<int, string> editorByRuntimeMap { get; set; } = new Dictionary<int, string>();
         public Dictionary<string, int> runtimeByEditorMap { get; set; } = new Dictionary<string, int>();
         

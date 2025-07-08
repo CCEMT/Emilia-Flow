@@ -9,9 +9,10 @@ namespace Emilia.Flow.Editor
     [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(3000)]
     public class FlowBuildEdge : IDataBuild
     {
-        public void Build(IBuildContainer buildContainer, Action onFinished)
+        public void Build(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)
         {
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
+            FlowBuildArgs flowBuildArgs = buildArgs as FlowBuildArgs;
 
             List<FlowEdgeAsset> edges = new List<FlowEdgeAsset>();
 
@@ -20,15 +21,15 @@ namespace Emilia.Flow.Editor
 
             int id = 0;
 
-            int amount = container.editorFlowAsset.edges.Count;
+            int amount = flowBuildArgs.flowAsset.edges.Count;
             for (int i = 0; i < amount; i++)
             {
-                EditorEdgeAsset edge = container.editorFlowAsset.edges[i];
+                EditorEdgeAsset edge = flowBuildArgs.flowAsset.edges[i];
 
                 id++;
 
-                EditorNodeAsset editorInputNode = container.editorFlowAsset.nodeMap.GetValueOrDefault(edge.inputNodeId);
-                EditorNodeAsset editorOutputNode = container.editorFlowAsset.nodeMap.GetValueOrDefault(edge.outputNodeId);
+                EditorNodeAsset editorInputNode = flowBuildArgs.flowAsset.nodeMap.GetValueOrDefault(edge.inputNodeId);
+                EditorNodeAsset editorOutputNode = flowBuildArgs.flowAsset.nodeMap.GetValueOrDefault(edge.outputNodeId);
                 if (editorInputNode == null || editorOutputNode == null) continue;
 
                 FlowNodeAsset inputNode = container.nodeMap.GetValueOrDefault(editorInputNode.id);

@@ -13,16 +13,17 @@ namespace Emilia.Flow.Editor
     [BuildPipeline(typeof(FlowBuildArgs)), BuildSequence(2000)]
     public class FlowBuildNode : IDataBuild
     {
-        public void Build(IBuildContainer buildContainer, Action onFinished)
+        public void Build(IBuildContainer buildContainer, IBuildArgs buildArgs, Action onFinished)
         {
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
+            FlowBuildArgs flowBuildArgs = buildArgs as FlowBuildArgs;
 
             int id = 0;
 
-            int amount = container.editorFlowAsset.nodes.Count;
+            int amount = flowBuildArgs.flowAsset.nodes.Count;
             for (int i = 0; i < amount; i++)
             {
-                EditorNodeAsset editorNodeAsset = container.editorFlowAsset.nodes[i];
+                EditorNodeAsset editorNodeAsset = flowBuildArgs.flowAsset.nodes[i];
 
                 FlowNodeAsset flowNodeAsset = editorNodeAsset.userData as FlowNodeAsset;
                 if (flowNodeAsset == default) continue;
@@ -101,7 +102,7 @@ namespace Emilia.Flow.Editor
         {
             List<string> portIds = portAssets.Select((x) => x.portName).ToList();
             FlowShowOrHideUtility.FilterPort(universalFlowNodeAsset, portIds);
-            
+
             for (int i = portAssets.Count - 1; i >= 0; i--)
             {
                 FlowPortAsset portAsset = portAssets[i];

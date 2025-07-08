@@ -19,7 +19,7 @@ namespace Emilia.Flow.Editor
                 return;
             }
 
-            List<EditorFlowRunner> runners = EditorFlowRunner.runnerByAssetId.GetValueOrDefault(container.editorFlowAsset.id);
+            List<EditorFlowRunner> runners = EditorFlowRunner.runnerByAssetId.GetValueOrDefault(args.flowAsset.id);
             if (runners == null)
             {
                 onFinished.Invoke();

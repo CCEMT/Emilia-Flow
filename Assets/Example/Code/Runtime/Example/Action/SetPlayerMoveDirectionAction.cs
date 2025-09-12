@@ -25,7 +25,7 @@ namespace Emilia.Statescript
 
         protected override void OnExecute()
         {
-            player.moveDirection = graph.variablesManage.GetValue<Vector2>(this.asset.key);
+            player.moveDirection = graph.variablesManage.Get<Vector2>(this.asset.key);
         }
     }
 }

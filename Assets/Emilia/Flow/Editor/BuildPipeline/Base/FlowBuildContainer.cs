@@ -12,7 +12,7 @@ namespace Emilia.Flow.Editor
         
         public List<FlowNodeAsset> nodes { get; set; } = new List<FlowNodeAsset>();
         public List<FlowEdgeAsset> edges { get; set; } = new List<FlowEdgeAsset>();
-        public VariablesManage variablesManage { get; set; }
+        public VariablesManager variablesManage { get; set; }
 
         public Dictionary<string, FlowNodeAsset> nodeMap { get; set; } = new Dictionary<string, FlowNodeAsset>();
 

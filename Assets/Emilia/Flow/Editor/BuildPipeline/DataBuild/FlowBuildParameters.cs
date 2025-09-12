@@ -12,10 +12,10 @@ namespace Emilia.Flow.Editor
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
             FlowBuildArgs flowBuildArgs = buildArgs as FlowBuildArgs;
 
-            if (flowBuildArgs.flowAsset.editorParametersManage == null) container.variablesManage = new VariablesManage();
+            if (flowBuildArgs.flowAsset.editorParametersManage == null) container.variablesManage = new VariablesManager();
             else
             {
-                VariablesManage rootVariablesManage = flowBuildArgs.flowAsset.editorParametersManage.ToParametersManage();
+                VariablesManager rootVariablesManage = flowBuildArgs.flowAsset.editorParametersManage.ToParametersManage();
                 container.variablesManage = rootVariablesManage;
             }
 

@@ -31,8 +31,8 @@ namespace Emilia.Statescript
         protected override void OnInput(object arg)
         {
             base.OnInput(arg);
-            Variable leftValue = graph.variablesManage.GetThisValue(this.asset.leftKey);
-            Variable rightValue = this.asset.useDefine ? this.asset.rightDefineValue : graph.variablesManage.GetThisValue(this.asset.rightKey);
+            Variable leftValue = graph.variablesManage.GetVariable(this.asset.leftKey);
+            Variable rightValue = this.asset.useDefine ? this.asset.rightDefineValue : graph.variablesManage.GetVariable(this.asset.rightKey);
 
             bool result = false;
             if (leftValue != null && rightValue != null) result = VariableUtility.Compare(leftValue, rightValue, this.asset.compareOperator);

@@ -29,10 +29,10 @@ namespace Emilia.Flow.Editor
         protected virtual void OnEditorParameter()
         {
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
-            EditorParametersManage editorParametersManage = flowAsset.editorParametersManage;
+            EditorParametersManager editorParametersManage = flowAsset.editorParametersManage;
             if (editorParametersManage == null)
             {
-                editorParametersManage = flowAsset.editorParametersManage = ScriptableObject.CreateInstance<EditorParametersManage>();
+                editorParametersManage = flowAsset.editorParametersManage = ScriptableObject.CreateInstance<EditorParametersManager>();
                 EditorAssetKit.SaveAssetIntoObject(editorParametersManage, flowAsset);
             }
 

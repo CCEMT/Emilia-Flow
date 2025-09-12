@@ -27,7 +27,7 @@ namespace Emilia.Statescript
             float verticalValue = Input.GetAxis("Vertical");
             Vector2 joyValue = new Vector2(horizontalValue, verticalValue);
 
-            graph.variablesManage.SetValue(this.asset.joyValueKey, joyValue);
+            graph.variablesManage.Set(this.asset.joyValueKey, joyValue);
 
             if (joyValue == Vector2.zero)
             {

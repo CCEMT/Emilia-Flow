@@ -22,7 +22,7 @@ namespace Emilia.Flow
         private List<FlowEdgeAsset> _edges;
 
         [SerializeField]
-        private VariablesManage _variablesManage;
+        private VariablesManager _variablesManage;
 
         [SerializeField]
         private object _userData;
@@ -32,7 +32,7 @@ namespace Emilia.Flow
         public IReadOnlyList<FlowNodeAsset> nodes => this._nodes;
         public IReadOnlyList<FlowEdgeAsset> edges => this._edges;
 
-        public VariablesManage variablesManage => this._variablesManage;
+        public VariablesManager variablesManage => this._variablesManage;
 
         public object userData
         {
@@ -40,7 +40,7 @@ namespace Emilia.Flow
             internal set => this._userData = value;
         }
 
-        public FlowGraphAsset(string id, string description, List<FlowNodeAsset> nodes, List<FlowEdgeAsset> edges, VariablesManage variablesManage)
+        public FlowGraphAsset(string id, string description, List<FlowNodeAsset> nodes, List<FlowEdgeAsset> edges, VariablesManager variablesManage)
         {
             this._id = id;
             this._description = description;
@@ -91,7 +91,7 @@ namespace Emilia.Flow
         /// <summary>
         /// 变量管理
         /// </summary>
-        public VariablesManage variablesManage { get; private set; }
+        public VariablesEventManager variablesManage { get; private set; }
 
         /// <summary>
         /// 调用者
@@ -130,7 +130,7 @@ namespace Emilia.Flow
         {
             this.uid = uid;
             this.graphAsset = graphAsset;
-            variablesManage = graphAsset.variablesManage.Clone();
+            variablesManage = new VariablesEventManager(graphAsset.variablesManage.Clone());
             this.owner = owner;
             this.parent = parent;
 
@@ -243,7 +243,7 @@ namespace Emilia.Flow
             this._nodeById.Clear();
             this._edgeById.Clear();
 
-            variablesManage.Clear();
+            variablesManage = null;
         }
     }
 }

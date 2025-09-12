@@ -3158,7 +3158,7 @@ MonoBehaviour:
       Data: 
     - Name: _variablesManage
       Entry: 7
-      Data: 169|Emilia.Variables.VariablesManage, Emilia.Variable
+      Data: 169|Emilia.Variables.VariablesManager, Emilia.Variable
     - Name: _variableMap
       Entry: 7
       Data: 170|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Emilia.Variables.Variable,

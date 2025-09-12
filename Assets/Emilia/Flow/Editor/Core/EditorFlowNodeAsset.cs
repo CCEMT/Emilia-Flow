@@ -46,18 +46,18 @@ namespace Emilia.Flow.Editor
         private Label descriptionLabel;
 
         private bool _editInNode;
-        protected override bool editInNode => _editInNode;
+        protected override bool editInNode => this._editInNode;
 
         public override bool canExpanded => false;
 
-        public object openScriptObject => flowNodeAsset.userData;
+        public object openScriptObject => this.flowNodeAsset.userData;
 
         public override void Initialize(EditorGraphView graphView, EditorNodeAsset asset)
         {
-            flowNodeAsset = asset as EditorFlowNodeAsset;
-            editorFlowAsset = graphView.graphAsset as EditorFlowAsset;
+            this.flowNodeAsset = asset as EditorFlowNodeAsset;
+            this.editorFlowAsset = graphView.graphAsset as EditorFlowAsset;
 
-            _editInNode = editorFlowAsset.capacity.HasFlag(FlowCapacity.EditToNode);
+            this._editInNode = this.editorFlowAsset.capacity.HasFlag(FlowCapacity.EditToNode);
 
             base.Initialize(graphView, asset);
         }
@@ -66,24 +66,25 @@ namespace Emilia.Flow.Editor
         {
             base.InitializeNodeView();
             AddDescription();
-            SetNodeColor(flowNodeAsset.userData);
+            SetNodeColor(this.flowNodeAsset.userData);
         }
 
         private void AddDescription()
         {
-            string description = ObjectDescriptionUtility.GetDescription(flowNodeAsset.userData, graphView);
+            string description = ObjectDescriptionUtility.GetDescription(this.flowNodeAsset.userData, graphView);
 
-            descriptionLabel = new Label(description);
-            descriptionLabel.enableRichText = true;
-            descriptionLabel.pickingMode = PickingMode.Ignore;
+            this.descriptionLabel = new Label(description);
+            this.descriptionLabel.enableRichText = true;
+            this.descriptionLabel.pickingMode = PickingMode.Ignore;
             this.descriptionLabel.style.position = Position.Absolute;
-            topLayerContainer.Add(descriptionLabel);
+            this.descriptionLabel.style.unityTextAlign = TextAnchor.UpperCenter;
+            topLayerContainer.Add(this.descriptionLabel);
         }
 
         public override void OnValueChanged(bool isSilent = false)
         {
             base.OnValueChanged(isSilent);
-            if (descriptionLabel != null) descriptionLabel.text = ObjectDescriptionUtility.GetDescription(flowNodeAsset.userData, graphView);
+            if (this.descriptionLabel != null) this.descriptionLabel.text = ObjectDescriptionUtility.GetDescription(this.flowNodeAsset.userData, graphView);
             RebuildPortView();
         }
 
@@ -91,7 +92,7 @@ namespace Emilia.Flow.Editor
         {
             List<EditorPortInfo> portAssets = new List<EditorPortInfo>();
 
-            IUniversalFlowNodeAsset universalFlowNodeAsset = flowNodeAsset.userData as IUniversalFlowNodeAsset;
+            IUniversalFlowNodeAsset universalFlowNodeAsset = this.flowNodeAsset.userData as IUniversalFlowNodeAsset;
             if (universalFlowNodeAsset == default) return portAssets;
 
             BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
@@ -105,7 +106,7 @@ namespace Emilia.Flow.Editor
                 FlowInputValuePort flowInputVarPort = fieldInfo.GetCustomAttribute<FlowInputValuePort>(true);
                 if (flowInputVarPort == null) continue;
 
-                UniversalEditorPortInfo editorPortInfo = ToEditorPortInfo(fieldInfo.Name, EditorPortDirection.Input, fieldInfo.FieldType, flowInputVarPort);
+                EditorPortInfo editorPortInfo = ToEditorPortInfo(fieldInfo.Name, EditorPortDirection.Input, fieldInfo.FieldType, flowInputVarPort);
                 editorPortInfo.order = -1 + i * 0.001f;
 
                 FlowPortOrderAttribute flowPortOrderAttribute = fieldInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
@@ -122,7 +123,7 @@ namespace Emilia.Flow.Editor
                 if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
                 
                 FlowInsertOrderAttribute flowInsertOrderAttribute = fieldInfo.GetCustomAttribute<FlowInsertOrderAttribute>(true);
-                if (flowInsertOrderAttribute != null) editorPortInfo.insertOrder = flowInsertOrderAttribute.insertOrder;
+                if (flowInsertOrderAttribute != null) editorPortInfo.priority = flowInsertOrderAttribute.insertOrder;
 
                 portAssets.Add(editorPortInfo);
             }
@@ -138,7 +139,7 @@ namespace Emilia.Flow.Editor
                 FlowOutputValuePort flowOutputVarPort = methodInfo.GetCustomAttribute<FlowOutputValuePort>(true);
                 if (flowOutputVarPort != null)
                 {
-                    UniversalEditorPortInfo valueEditorPortInfo = ToEditorPortInfo(methodInfo.Name, EditorPortDirection.Output, methodInfo.ReturnType, flowOutputVarPort);
+                    EditorPortInfo valueEditorPortInfo = ToEditorPortInfo(methodInfo.Name, EditorPortDirection.Output, methodInfo.ReturnType, flowOutputVarPort);
                     valueEditorPortInfo.order = -1 + i * 0.001f;
 
                     FlowPortOrderAttribute valueFlowPortOrderAttribute = methodInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
@@ -148,7 +149,7 @@ namespace Emilia.Flow.Editor
                     if (valueFlowPortColorAttribute != null) valueEditorPortInfo.color = new Color(valueFlowPortColorAttribute.r, valueFlowPortColorAttribute.g, valueFlowPortColorAttribute.b);
                     
                     FlowInsertOrderAttribute valueFlowInsertOrderAttribute = methodInfo.GetCustomAttribute<FlowInsertOrderAttribute>(true);
-                    if (valueFlowInsertOrderAttribute != null) valueEditorPortInfo.insertOrder = valueFlowInsertOrderAttribute.insertOrder;
+                    if (valueFlowInsertOrderAttribute != null) valueEditorPortInfo.priority = valueFlowInsertOrderAttribute.insertOrder;
 
                     portAssets.Add(valueEditorPortInfo);
                     continue;
@@ -172,7 +173,7 @@ namespace Emilia.Flow.Editor
 
                 if (flowPortGenerator == null) continue;
 
-                UniversalEditorPortInfo editorPortInfo = ToEditorPortInfo(methodInfo.Name, isInputOrOutput.Value, null, flowPortGenerator);
+                EditorPortInfo editorPortInfo = ToEditorPortInfo(methodInfo.Name, isInputOrOutput.Value, null, flowPortGenerator);
                 editorPortInfo.order = i * 0.001f;
 
                 FlowPortOrderAttribute flowPortOrderAttribute = methodInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
@@ -182,7 +183,7 @@ namespace Emilia.Flow.Editor
                 if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
                 
                 FlowInsertOrderAttribute flowInsertOrderAttribute = methodInfo.GetCustomAttribute<FlowInsertOrderAttribute>(true);
-                if (flowInsertOrderAttribute != null) editorPortInfo.insertOrder = flowInsertOrderAttribute.insertOrder;
+                if (flowInsertOrderAttribute != null) editorPortInfo.priority = flowInsertOrderAttribute.insertOrder;
 
                 portAssets.Add(editorPortInfo);
             }
@@ -194,9 +195,9 @@ namespace Emilia.Flow.Editor
             return portAssets;
         }
 
-        private UniversalEditorPortInfo ToEditorPortInfo(string id, EditorPortDirection direction, Type portType, FlowPortGenerator flowPortGenerator)
+        private EditorPortInfo ToEditorPortInfo(string id, EditorPortDirection direction, Type portType, FlowPortGenerator flowPortGenerator)
         {
-            UniversalEditorPortInfo editorPortInfo = new UniversalEditorPortInfo();
+            EditorPortInfo editorPortInfo = new EditorPortInfo();
             editorPortInfo.id = id;
             editorPortInfo.nodePortViewType = typeof(FlowPortView);
             editorPortInfo.displayName = flowPortGenerator.displayName;

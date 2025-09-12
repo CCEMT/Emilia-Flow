@@ -201,6 +201,7 @@ namespace Emilia.Flow
         public void Tick()
         {
             onTick?.Invoke();
+            variablesManage.Tick();
         }
 
         /// <summary>

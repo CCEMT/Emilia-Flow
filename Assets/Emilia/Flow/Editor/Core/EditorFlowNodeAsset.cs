@@ -90,7 +90,7 @@ namespace Emilia.Flow.Editor
 
         public override List<EditorPortInfo> CollectStaticPortAssets()
         {
-            List<EditorPortInfo> portAssets = new List<EditorPortInfo>();
+            List<EditorPortInfo> portAssets = new();
 
             IUniversalFlowNodeAsset universalFlowNodeAsset = this.flowNodeAsset.userData as IUniversalFlowNodeAsset;
             if (universalFlowNodeAsset == default) return portAssets;
@@ -121,7 +121,7 @@ namespace Emilia.Flow.Editor
 
                 FlowPortColorAttribute flowPortColorAttribute = fieldInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
                 if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
-                
+
                 FlowInsertOrderAttribute flowInsertOrderAttribute = fieldInfo.GetCustomAttribute<FlowInsertOrderAttribute>(true);
                 if (flowInsertOrderAttribute != null) editorPortInfo.priority = flowInsertOrderAttribute.insertOrder;
 
@@ -147,7 +147,7 @@ namespace Emilia.Flow.Editor
 
                     FlowPortColorAttribute valueFlowPortColorAttribute = methodInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
                     if (valueFlowPortColorAttribute != null) valueEditorPortInfo.color = new Color(valueFlowPortColorAttribute.r, valueFlowPortColorAttribute.g, valueFlowPortColorAttribute.b);
-                    
+
                     FlowInsertOrderAttribute valueFlowInsertOrderAttribute = methodInfo.GetCustomAttribute<FlowInsertOrderAttribute>(true);
                     if (valueFlowInsertOrderAttribute != null) valueEditorPortInfo.priority = valueFlowInsertOrderAttribute.insertOrder;
 
@@ -173,7 +173,9 @@ namespace Emilia.Flow.Editor
 
                 if (flowPortGenerator == null) continue;
 
-                EditorPortInfo editorPortInfo = ToEditorPortInfo(methodInfo.Name, isInputOrOutput.Value, null, flowPortGenerator);
+                ParameterInfo firstParameter = methodInfo.GetParameters().FirstOrDefault();
+
+                EditorPortInfo editorPortInfo = ToEditorPortInfo(methodInfo.Name, isInputOrOutput.Value, firstParameter?.ParameterType, flowPortGenerator);
                 editorPortInfo.order = i * 0.001f;
 
                 FlowPortOrderAttribute flowPortOrderAttribute = methodInfo.GetCustomAttribute<FlowPortOrderAttribute>(true);
@@ -181,7 +183,7 @@ namespace Emilia.Flow.Editor
 
                 FlowPortColorAttribute flowPortColorAttribute = methodInfo.GetCustomAttribute<FlowPortColorAttribute>(true);
                 if (flowPortColorAttribute != null) editorPortInfo.color = new Color(flowPortColorAttribute.r, flowPortColorAttribute.g, flowPortColorAttribute.b);
-                
+
                 FlowInsertOrderAttribute flowInsertOrderAttribute = methodInfo.GetCustomAttribute<FlowInsertOrderAttribute>(true);
                 if (flowInsertOrderAttribute != null) editorPortInfo.priority = flowInsertOrderAttribute.insertOrder;
 
@@ -197,7 +199,7 @@ namespace Emilia.Flow.Editor
 
         private EditorPortInfo ToEditorPortInfo(string id, EditorPortDirection direction, Type portType, FlowPortGenerator flowPortGenerator)
         {
-            EditorPortInfo editorPortInfo = new EditorPortInfo();
+            EditorPortInfo editorPortInfo = new();
             editorPortInfo.id = id;
             editorPortInfo.nodePortViewType = typeof(FlowPortView);
             editorPortInfo.displayName = flowPortGenerator.displayName;

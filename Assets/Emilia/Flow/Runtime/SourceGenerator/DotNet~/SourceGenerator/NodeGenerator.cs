@@ -79,7 +79,13 @@ namespace Emilia.Flow.SourceGenerator
 
                 if (valueMethods.Count <= 0 && valueMethodArgs.Count <= 0 && methods.Count <= 0 && methodArgs.Count <= 0) continue;
 
-                var source = GenerateClassWithDictionary(namespaceName, className, methods, methodArgs, valueMethods, valueMethodArgs);
+                var usings = classDeclaration.SyntaxTree.GetRoot()
+                    .DescendantNodes()
+                    .OfType<UsingDirectiveSyntax>()
+                    .Select(u => u.ToString())
+                    .ToList();
+
+                var source = GenerateClassWithDictionary(namespaceName, className, methods, methodArgs, valueMethods, valueMethodArgs, usings);
                 context.AddSource($"{classDeclaration.Identifier.Text}_Generated.cs", SourceText.From(source, Encoding.UTF8));
             }
         }
@@ -88,31 +94,38 @@ namespace Emilia.Flow.SourceGenerator
             List<IMethodSymbol> methods,
             List<IMethodSymbol> methodArgs,
             List<IMethodSymbol> values,
-            List<IMethodSymbol> valueArgs)
+            List<IMethodSymbol> valueArgs,
+            List<string> usings)
         {
-            StringBuilder sourceBuilder = new StringBuilder($@"
-using System;
-using System.Collections.Generic;
+            StringBuilder sourceBuilder = new StringBuilder();
+            
+            foreach (var usingDirective in usings)
+            {
+                sourceBuilder.AppendLine(usingDirective);
+            }
+            
+            sourceBuilder.AppendLine();
+            sourceBuilder.AppendLine($"namespace {namespaceName}");
+            sourceBuilder.AppendLine("{");
+            sourceBuilder.AppendLine($"    public partial class {className}");
+            sourceBuilder.AppendLine("    {");
+            sourceBuilder.AppendLine("        protected override void InitMethodCache()");
+            sourceBuilder.AppendLine("        {");
+            sourceBuilder.AppendLine("            base.InitMethodCache();");
+            
+            foreach (IMethodSymbol method in values) 
+                sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = (_) => {method.Name}();");
+            foreach (IMethodSymbol method in valueArgs) 
+                sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = (arg) => (object) {method.Name}(({method.Parameters.FirstOrDefault().Type}) arg);");
 
-namespace {namespaceName}
-{{
-    public partial class {className}
-    {{
-        protected override void InitMethodCache()
-        {{
-            base.InitMethodCache();
-");
-            foreach (IMethodSymbol method in values) sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = (_) => {method.Name}();");
-            foreach (IMethodSymbol method in valueArgs) sourceBuilder.AppendLine($@"            getValueCache[""{method.Name}""] = (arg) => (object){method.Name}(arg);");
+            foreach (IMethodSymbol method in methods) 
+                sourceBuilder.AppendLine($@"            methodCaches[""{method.Name}""] = (_) => {method.Name}();");
+            foreach (IMethodSymbol method in methodArgs) 
+                sourceBuilder.AppendLine($@"            methodCaches[""{method.Name}""] = (arg) => {method.Name}(({method.Parameters.FirstOrDefault().Type}) arg);");
 
-            foreach (IMethodSymbol method in methods) sourceBuilder.AppendLine($@"            methodCaches[""{method.Name}""] = (_) => {method.Name}();");
-            foreach (IMethodSymbol method in methodArgs) sourceBuilder.AppendLine($@"            methodCaches[""{method.Name}""] = {method.Name};");
-
-            sourceBuilder.AppendLine($@"
-        }}
-    }}
-}}
-");
+            sourceBuilder.AppendLine("        }");
+            sourceBuilder.AppendLine("    }");
+            sourceBuilder.AppendLine("}");
 
             return sourceBuilder.ToString();
         }

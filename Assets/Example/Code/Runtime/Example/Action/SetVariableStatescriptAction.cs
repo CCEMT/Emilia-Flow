@@ -30,12 +30,12 @@ namespace Emilia.Statescript
     {
         protected override void OnExecute()
         {
-            Variable leftValue = graph.variablesManage.GetThisValue(this.asset.leftKey);
-            Variable rightValue = this.asset.useDefine ? this.asset.rightDefineValue : graph.variablesManage.GetThisValue(this.asset.rightKey);
+            Variable leftValue = graph.variablesManage.GetVariable(this.asset.leftKey);
+            Variable rightValue = this.asset.useDefine ? this.asset.rightDefineValue : graph.variablesManage.GetVariable(this.asset.rightKey);
             if (leftValue != null && rightValue != null)
             {
                 Variable result = VariableUtility.Calculate(leftValue, rightValue, this.asset.calculateOperator);
-                graph.variablesManage.SetValue(this.asset.leftKey, result);
+                graph.variablesManage.Set(this.asset.leftKey, result);
             }
         }
     }

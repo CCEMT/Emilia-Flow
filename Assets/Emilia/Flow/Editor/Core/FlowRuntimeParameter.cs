@@ -22,7 +22,7 @@ namespace Emilia.Flow.Editor
                 _runtimeUserVariables.Clear();
                 if (this.runner == null) return this._runtimeUserVariables;
 
-                foreach (var variablePair in this.runner.graph.variablesManage.variableMap)
+                foreach (var variablePair in this.runner.graph.variablesManage.variablesManager.variableMap)
                 {
                     EditorParameter editorParameter = editorFlowAsset.editorParametersManage.parameters.Find((x) => x.key == variablePair.Key);
                     if (editorParameter == null) continue;

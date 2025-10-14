@@ -25,13 +25,13 @@ namespace Emilia.Flow
 
             loader.ReleaseAsset(fullPath);
 
-            Init(flowGraphAsset,owner);
+            Init(flowGraphAsset, owner);
         }
 
         public void Init(FlowGraphAsset graphAsset, object owner = null)
         {
             uid = FlowRunnerUtility.GetId();
-            
+
             this._flowGraph = ReferencePool.Acquire<FlowGraph>();
             this._flowGraph.Init(uid, graphAsset, owner);
         }

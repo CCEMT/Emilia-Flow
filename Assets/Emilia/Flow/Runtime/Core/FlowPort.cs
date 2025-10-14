@@ -29,8 +29,8 @@ namespace Emilia.Flow
         private FlowPortAsset _asset;
         private FlowNode _node;
 
-        private List<FlowEdge> _edges = new List<FlowEdge>();
-        private Dictionary<int, FlowEdge> _edgeById = new Dictionary<int, FlowEdge>();
+        private List<FlowEdge> _edges = new();
+        private Dictionary<int, FlowEdge> _edgeById = new();
 
         public FlowPortAsset asset => _asset;
         public FlowNode node => _node;
@@ -71,7 +71,7 @@ namespace Emilia.Flow
         /// 获取该端口所连接的值
         /// </summary>
         public T GetValue<T>(object arg) => this._node.GetPortValue<T>(this._asset.portName, arg);
-        
+
         public void OnDispose()
         {
             ReferencePool.Release(this);

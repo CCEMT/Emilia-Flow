@@ -14,10 +14,10 @@ namespace Emilia.Flow.Editor
             FlowBuildContainer container = buildContainer as FlowBuildContainer;
             FlowBuildArgs flowBuildArgs = buildArgs as FlowBuildArgs;
 
-            List<FlowEdgeAsset> edges = new List<FlowEdgeAsset>();
+            List<FlowEdgeAsset> edges = new();
 
-            Dictionary<int, FlowEdgeAsset> edgeById = new Dictionary<int, FlowEdgeAsset>();
-            Dictionary<FlowEdgeAsset, float> priorityByEdge = new Dictionary<FlowEdgeAsset, float>();
+            Dictionary<int, FlowEdgeAsset> edgeById = new();
+            Dictionary<FlowEdgeAsset, float> priorityByEdge = new();
 
             int id = 0;
 
@@ -35,14 +35,14 @@ namespace Emilia.Flow.Editor
                 FlowNodeAsset inputNode = container.nodeMap.GetValueOrDefault(editorInputNode.id);
                 FlowNodeAsset outputNode = container.nodeMap.GetValueOrDefault(editorOutputNode.id);
                 if (inputNode == null || outputNode == null) continue;
-                
+
                 FlowPortAsset inputFlowPortAsset = inputNode.inputPorts.FirstOrDefault((x) => x.portName == edge.inputPortId);
                 FlowPortAsset outputFlowPortAsset = outputNode.outputPorts.FirstOrDefault((x) => x.portName == edge.outputPortId);
                 if (inputFlowPortAsset == null || outputFlowPortAsset == null) continue;
-                
+
                 float priority = editorInputNode.position.y + editorOutputNode.position.y;
 
-                FlowEdgeAsset flowEdge = new FlowEdgeAsset(id, inputNode.id, outputNode.id, edge.inputPortId, edge.outputPortId);
+                FlowEdgeAsset flowEdge = new(id, inputNode.id, outputNode.id, edge.inputPortId, edge.outputPortId);
                 priorityByEdge.Add(flowEdge, priority);
                 edgeById[id] = flowEdge;
 

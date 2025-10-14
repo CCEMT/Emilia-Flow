@@ -11,7 +11,7 @@ namespace Emilia.Flow.Editor
 
             string path = flowAsset.outputPath;
 
-            FlowBuildArgs flowBuildArgs = new FlowBuildArgs(flowAsset, path);
+            FlowBuildArgs flowBuildArgs = new(flowAsset, path);
             flowBuildArgs.onBuildComplete = onBuildComplete;
 
             DataBuildUtility.Build(flowBuildArgs);

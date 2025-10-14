@@ -12,10 +12,7 @@ namespace Emilia.Flow
     {
         public Type nodeType => typeof(T);
 
-        public override FlowNode CreateNode()
-        {
-            return ReferencePool.Acquire<T>();
-        }
+        public override FlowNode CreateNode() => ReferencePool.Acquire<T>();
     }
 
     public abstract class UniversalFlowNode<T> : FlowNode where T : FlowNodeAsset

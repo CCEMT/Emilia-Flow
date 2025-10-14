@@ -48,7 +48,7 @@ namespace Emilia.Flow.Editor
 
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
 
-            FlowRuntimeParameter flowRuntimeParameter = new FlowRuntimeParameter(getFlowRunnerEvent.runner, flowAsset);
+            FlowRuntimeParameter flowRuntimeParameter = new(getFlowRunnerEvent.runner, flowAsset);
             EditorKit.SetSelection(flowRuntimeParameter, "运行参数");
         }
 
@@ -56,7 +56,7 @@ namespace Emilia.Flow.Editor
         {
             EditorFlowAsset flowAsset = graphView.graphAsset as EditorFlowAsset;
 
-            OdinMenu odinMenu = new OdinMenu();
+            OdinMenu odinMenu = new();
             odinMenu.defaultWidth = 300;
 
             if (EditorFlowRunner.runnerByAssetId == null) return odinMenu;

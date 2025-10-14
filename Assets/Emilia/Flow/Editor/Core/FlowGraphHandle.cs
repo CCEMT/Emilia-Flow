@@ -14,7 +14,7 @@ namespace Emilia.Flow.Editor
         private EditorGraphView editorGraphView;
         private EditorFlowAsset editorFlowAsset;
         private EditorFlowRunner debugRunner;
-        private List<EditorFlowNodeView> displayNodeViews = new List<EditorFlowNodeView>();
+        private List<EditorFlowNodeView> displayNodeViews = new();
 
         public override void Initialize(EditorGraphView graphView)
         {
@@ -77,7 +77,7 @@ namespace Emilia.Flow.Editor
 
             FlowGraph flow = null;
 
-            Queue<FlowGraph> queue = new Queue<FlowGraph>();
+            Queue<FlowGraph> queue = new();
 
             queue.Enqueue(this.debugRunner.graph);
 
@@ -120,7 +120,7 @@ namespace Emilia.Flow.Editor
             int uid = this.debugRunner.uid;
             if (EditorFlowRunner.nodeStates.TryGetValue(uid, out List<int> runningNodes) == false) return;
 
-            List<EditorFlowNodeView> runningNodeViews = new List<EditorFlowNodeView>();
+            List<EditorFlowNodeView> runningNodeViews = new();
 
             int runningNodeCount = runningNodes.Count;
             for (var i = 0; i < runningNodeCount; i++)

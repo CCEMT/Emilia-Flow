@@ -15,7 +15,7 @@ namespace Emilia.Statescript
         {
             if (string.IsNullOrEmpty(fileName)) return;
 
-            FlowLoader flowLoader = new FlowLoader();
+            FlowLoader flowLoader = new();
             flowLoader.editorFilePath = EditorPath;
 
             runner = FlowRunnerUtility.CreateRunner();

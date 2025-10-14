@@ -14,7 +14,7 @@ namespace Emilia.Flow.Editor
         {
             if (node.graph == null) return;
             if (node.graph.isActive == false) return;
-            
+
             int uid = node.graph.uid;
             if (EditorFlowRunner.nodeStates.ContainsKey(uid) == false) EditorFlowRunner.nodeStates[uid] = new List<int>();
 
@@ -34,8 +34,8 @@ namespace Emilia.Flow.Editor
         {
             if (node.graph == null) return;
             if (node.graph.isActive == false) return;
-            
-            EditorFlowDebugPingMessage pingMessage = new EditorFlowDebugPingMessage();
+
+            EditorFlowDebugPingMessage pingMessage = new();
             pingMessage.nodeId = node.flowNodeAsset.id;
             pingMessage.text = message;
 

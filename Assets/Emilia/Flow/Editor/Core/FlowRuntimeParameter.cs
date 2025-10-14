@@ -12,7 +12,7 @@ namespace Emilia.Flow.Editor
         private EditorFlowRunner runner;
         private EditorFlowAsset editorFlowAsset;
 
-        private Dictionary<string, Variable> _runtimeUserVariables = new Dictionary<string, Variable>();
+        private Dictionary<string, Variable> _runtimeUserVariables = new();
 
         [LabelText("参数"), ShowInInspector]
         public Dictionary<string, Variable> runtimeUserVariables

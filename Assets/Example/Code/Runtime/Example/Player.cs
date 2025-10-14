@@ -14,7 +14,7 @@ namespace Emilia.Statescript
 
         void Update()
         {
-            Vector3 direction = new Vector3(this.moveDirection.x, 0, this.moveDirection.y);
+            Vector3 direction = new(this.moveDirection.x, 0, this.moveDirection.y);
             characterController.Move(direction * speed * Time.deltaTime);
             if (direction != Vector3.zero) transform.forward = direction;
         }

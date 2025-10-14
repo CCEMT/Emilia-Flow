@@ -54,7 +54,7 @@ namespace Emilia.Flow.Editor
                     FlowInputValuePort flowInputAttribute = fieldInfo.GetCustomAttribute<FlowInputValuePort>(true);
                     if (flowInputAttribute == null) continue;
 
-                    FlowPortAsset portAsset = new FlowPortAsset(fieldInfo.Name, new List<int>());
+                    FlowPortAsset portAsset = new(fieldInfo.Name, new List<int>());
                     inputPorts.Add(portAsset);
                 }
 
@@ -67,7 +67,7 @@ namespace Emilia.Flow.Editor
                     FlowOutputValuePort flowOutputAttribute = methodInfo.GetCustomAttribute<FlowOutputValuePort>(true);
                     if (flowOutputAttribute != null)
                     {
-                        FlowPortAsset valuePortAsset = new FlowPortAsset(methodInfo.Name, new List<int>());
+                        FlowPortAsset valuePortAsset = new(methodInfo.Name, new List<int>());
                         outputPorts.Add(valuePortAsset);
                         continue;
                     }
@@ -81,7 +81,7 @@ namespace Emilia.Flow.Editor
 
                     if (inputOrOutput == null) continue;
 
-                    FlowPortAsset portAsset = new FlowPortAsset(methodInfo.Name, new List<int>());
+                    FlowPortAsset portAsset = new(methodInfo.Name, new List<int>());
                     if (inputOrOutput.Value) inputPorts.Add(portAsset);
                     else outputPorts.Add(portAsset);
                 }

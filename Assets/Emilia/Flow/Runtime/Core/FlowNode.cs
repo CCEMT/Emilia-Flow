@@ -120,7 +120,11 @@ namespace Emilia.Flow
             for (int i = 0; i < count; i++)
             {
                 FlowEdge edge = port.edges[i];
-                edge.inputPort.Invoke(arg);
+                
+                using (FlowContext.Enter(this, edge, portName))
+                {
+                    edge.inputPort.Invoke(arg);
+                }
             }
         }
 

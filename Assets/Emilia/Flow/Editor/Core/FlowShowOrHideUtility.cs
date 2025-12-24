@@ -10,7 +10,7 @@ namespace Emilia.Flow.Editor
     {
         public static void FilterPort(IUniversalFlowNodeAsset flowNodeAsset, List<string> portIds)
         {
-            Dictionary<string, FlowPortIf> flowPortIfs = new Dictionary<string, FlowPortIf>();
+            Dictionary<string, FlowPortIf> flowPortIfs = new();
 
             Type nodeAssetType = flowNodeAsset.GetType();
             MemberInfo[] memberInfos = nodeAssetType.GetMembers(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
@@ -23,7 +23,7 @@ namespace Emilia.Flow.Editor
 
                 showIfAttributes.ForEach((attribute) => {
                     if (flowPortIfs.ContainsKey(attribute.portId)) return;
-                    FlowPortIf flowPortIf = new FlowPortIf();
+                    FlowPortIf flowPortIf = new();
                     flowPortIf.memberInfo = memberInfo;
                     flowPortIf.showIfAttribute = attribute;
                     flowPortIfs.Add(attribute.portId, flowPortIf);
@@ -33,7 +33,7 @@ namespace Emilia.Flow.Editor
 
                 hideIfAttributes.ForEach((attribute) => {
                     if (flowPortIfs.ContainsKey(attribute.portId)) return;
-                    FlowPortIf flowPortIf = new FlowPortIf();
+                    FlowPortIf flowPortIf = new();
                     flowPortIf.memberInfo = memberInfo;
                     flowPortIf.hideIfAttribute = attribute;
                     flowPortIfs.Add(attribute.portId, flowPortIf);
@@ -78,14 +78,20 @@ namespace Emilia.Flow.Editor
                     if (propertyInfo.CanRead == false) return null;
                     object propertyValue = propertyInfo.GetValue(thisObject, null);
 
-                    if (propertyInfo.PropertyType == typeof(bool)) { return (bool) propertyValue; }
+                    if (propertyInfo.PropertyType == typeof(bool))
+                    {
+                        return (bool) propertyValue;
+                    }
                     return propertyValue.Equals(value);
                 }
 
                 case MethodInfo methodInfo:
                 {
                     if (methodInfo.ReturnType != typeof(bool)) return null;
-                    if (methodInfo.IsStatic) { return (bool) methodInfo.Invoke(null, new object[] { }); }
+                    if (methodInfo.IsStatic)
+                    {
+                        return (bool) methodInfo.Invoke(null, new object[] { });
+                    }
                     return (bool) methodInfo.Invoke(thisObject, new object[] { });
                 }
             }

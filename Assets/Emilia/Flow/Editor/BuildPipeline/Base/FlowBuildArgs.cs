@@ -7,7 +7,7 @@ namespace Emilia.Flow.Editor
     {
         public EditorFlowAsset flowAsset;
         public string outputPath;
-        
+
         public bool isGenerateFile;
         public bool updateRunner = true;
 

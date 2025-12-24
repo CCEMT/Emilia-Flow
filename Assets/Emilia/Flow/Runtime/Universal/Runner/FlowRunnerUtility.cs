@@ -11,7 +11,7 @@ namespace Emilia.Flow
     public static class FlowRunnerUtility
     {
         private static int maxId = 0;
-        private static Queue<int> idPool = new Queue<int>();
+        private static Queue<int> idPool = new();
 
         public static int GetId()
         {

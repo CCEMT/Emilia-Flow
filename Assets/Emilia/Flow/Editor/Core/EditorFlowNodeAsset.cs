@@ -67,6 +67,8 @@ namespace Emilia.Flow.Editor
             base.InitializeNodeView();
             AddDescription();
             SetNodeColor(this.flowNodeAsset.userData);
+
+            schedule.Execute(UpdateDescription).Until(() => graphView.loadProgress == 1).ExecuteLater(1);
         }
 
         private void AddDescription()
@@ -84,8 +86,13 @@ namespace Emilia.Flow.Editor
         public override void OnValueChanged(bool isSilent = false)
         {
             base.OnValueChanged(isSilent);
-            if (this.descriptionLabel != null) this.descriptionLabel.text = ObjectDescriptionUtility.GetDescription(this.flowNodeAsset.userData, graphView);
+            UpdateDescription();
             RebuildPortView();
+        }
+
+        public void UpdateDescription()
+        {
+            this.descriptionLabel.text = ObjectDescriptionUtility.GetDescription(this.flowNodeAsset.userData, graphView);
         }
 
         public override List<EditorPortInfo> CollectStaticPortAssets()

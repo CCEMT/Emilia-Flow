@@ -15,7 +15,7 @@ namespace Emilia.Statescript
     public abstract partial class StatescriptState<T> : StatescriptNode<T>, IStatescriptState where T : FlowNodeAsset
     {
         protected object pass;
-        protected StatescriptPulse statePulse = new StatescriptPulse();
+        protected StatescriptPulse statePulse = new();
 
         [FlowInputMethodPort("开启", FlowPortCapacity.MultiConnect), FlowPortOrder(100)]
         protected virtual void Start(object arg)

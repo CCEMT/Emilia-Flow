@@ -12,10 +12,10 @@ namespace Emilia.Flow
         public readonly int id;
 
         [SerializeField, HideInInspector]
-        private List<FlowPortAsset> _inputPorts = new List<FlowPortAsset>();
+        private List<FlowPortAsset> _inputPorts = new();
 
         [SerializeField, HideInInspector]
-        private List<FlowPortAsset> _outputPorts = new List<FlowPortAsset>();
+        private List<FlowPortAsset> _outputPorts = new();
 
         public IReadOnlyList<FlowPortAsset> inputPorts => this._inputPorts;
         public IReadOnlyList<FlowPortAsset> outputPorts => this._outputPorts;
@@ -30,11 +30,11 @@ namespace Emilia.Flow
         private FlowNodeAsset _flowNodeAsset;
         private FlowGraph _graph;
 
-        private Dictionary<string, FlowPort> _inputPorts = new Dictionary<string, FlowPort>();
-        private Dictionary<string, FlowPort> _outputPorts = new Dictionary<string, FlowPort>();
+        private Dictionary<string, FlowPort> _inputPorts = new();
+        private Dictionary<string, FlowPort> _outputPorts = new();
 
-        protected Dictionary<string, Func<object, object>> getValueCache { get; } = new Dictionary<string, Func<object, object>>();
-        protected Dictionary<string, Action<object>> methodCaches { get; } = new Dictionary<string, Action<object>>();
+        protected Dictionary<string, Func<object, object>> getValueCache { get; } = new();
+        protected Dictionary<string, Action<object>> methodCaches { get; } = new();
 
         public FlowNodeAsset flowNodeAsset => this._flowNodeAsset;
         public FlowGraph graph => this._graph;
@@ -120,7 +120,11 @@ namespace Emilia.Flow
             for (int i = 0; i < count; i++)
             {
                 FlowEdge edge = port.edges[i];
-                edge.inputPort.Invoke(arg);
+                
+                using (FlowContext.Enter(this, edge, portName))
+                {
+                    edge.inputPort.Invoke(arg);
+                }
             }
         }
 

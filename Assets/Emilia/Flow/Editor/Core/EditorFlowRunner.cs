@@ -8,11 +8,11 @@ namespace Emilia.Flow.Editor
 {
     public class EditorFlowRunner : IFlowRunner
     {
-        private static Dictionary<string, List<EditorFlowRunner>> _runnerByAssetId = new Dictionary<string, List<EditorFlowRunner>>();
-        private static Dictionary<int, EditorFlowRunner> _runnerByUid = new Dictionary<int, EditorFlowRunner>();
+        private static Dictionary<string, List<EditorFlowRunner>> _runnerByAssetId = new();
+        private static Dictionary<int, EditorFlowRunner> _runnerByUid = new();
 
-        public static readonly Dictionary<int, List<int>> nodeStates = new Dictionary<int, List<int>>();
-        public static readonly Dictionary<int, Queue<EditorFlowDebugPingMessage>> nodeMessage = new Dictionary<int, Queue<EditorFlowDebugPingMessage>>();
+        public static readonly Dictionary<int, List<int>> nodeStates = new();
+        public static readonly Dictionary<int, Queue<EditorFlowDebugPingMessage>> nodeMessage = new();
 
         public static IReadOnlyDictionary<string, List<EditorFlowRunner>> runnerByAssetId => _runnerByAssetId;
         public static IReadOnlyDictionary<int, EditorFlowRunner> runnerByUid => _runnerByUid;

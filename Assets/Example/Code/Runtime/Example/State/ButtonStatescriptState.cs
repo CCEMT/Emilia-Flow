@@ -18,8 +18,8 @@ namespace Emilia.Statescript
 
     public class ButtonStatescriptState : StatescriptState<ButtonStatescriptStateAsset>
     {
-        private StatescriptPulse downPulse = new StatescriptPulse();
-        private StatescriptPulse upPulse = new StatescriptPulse();
+        private StatescriptPulse downPulse = new();
+        private StatescriptPulse upPulse = new();
 
         protected override void OnStart()
         {

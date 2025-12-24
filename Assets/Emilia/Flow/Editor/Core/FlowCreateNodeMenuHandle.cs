@@ -15,10 +15,10 @@ namespace Emilia.Flow.Editor
         {
             base.InitializeCache(graphView, createNodeHandles);
             flowAsset = graphView.graphAsset as EditorFlowAsset;
-            FilterCreateNodeHandles(graphView,createNodeHandles);
+            FilterCreateNodeHandles(graphView, createNodeHandles);
         }
 
-        private void FilterCreateNodeHandles(EditorGraphView graphView,List<ICreateNodeHandle> createNodeHandles)
+        private void FilterCreateNodeHandles(EditorGraphView graphView, List<ICreateNodeHandle> createNodeHandles)
         {
             int cacheAmount = createNodeHandles.Count;
             for (int i = cacheAmount - 1; i >= 0; i--)

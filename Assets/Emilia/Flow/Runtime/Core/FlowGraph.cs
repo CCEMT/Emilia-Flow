@@ -52,11 +52,11 @@ namespace Emilia.Flow
 
     public class FlowGraph : IReference
     {
-        private List<FlowNode> _nodes = new List<FlowNode>();
-        private List<FlowEdge> _edges = new List<FlowEdge>();
+        private List<FlowNode> _nodes = new();
+        private List<FlowEdge> _edges = new();
 
-        private Dictionary<int, FlowNode> _nodeById = new Dictionary<int, FlowNode>();
-        private Dictionary<int, FlowEdge> _edgeById = new Dictionary<int, FlowEdge>();
+        private Dictionary<int, FlowNode> _nodeById = new();
+        private Dictionary<int, FlowEdge> _edgeById = new();
 
         /// <summary>
         /// 所有Node
@@ -106,7 +106,7 @@ namespace Emilia.Flow
         /// <summary>
         /// 子级
         /// </summary>
-        public List<FlowGraph> children { get; private set; } = new List<FlowGraph>();
+        public List<FlowGraph> children { get; private set; } = new();
 
         /// <summary>
         /// 是否激活

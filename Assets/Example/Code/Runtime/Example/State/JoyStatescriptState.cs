@@ -16,8 +16,8 @@ namespace Emilia.Statescript
 
     public class JoyStatescriptState : StatescriptState<JoyStatescriptStateAsset>
     {
-        private StatescriptPulse nonePulse = new StatescriptPulse();
-        private StatescriptPulse inputPulse = new StatescriptPulse();
+        private StatescriptPulse nonePulse = new();
+        private StatescriptPulse inputPulse = new();
 
         protected override void OnTick()
         {
@@ -25,7 +25,7 @@ namespace Emilia.Statescript
 
             float horizontalValue = Input.GetAxis("Horizontal");
             float verticalValue = Input.GetAxis("Vertical");
-            Vector2 joyValue = new Vector2(horizontalValue, verticalValue);
+            Vector2 joyValue = new(horizontalValue, verticalValue);
 
             graph.variablesManage.Set(this.asset.joyValueKey, joyValue);
 

@@ -24,6 +24,7 @@ namespace Emilia.Flow.Editor
             for (int i = 0; i < amount; i++)
             {
                 EditorNodeAsset editorNodeAsset = flowBuildArgs.flowAsset.nodes[i];
+                if (editorNodeAsset.graphAsset == null) editorNodeAsset.graphAsset = flowBuildArgs.flowAsset;
 
                 FlowNodeAsset flowNodeAsset = editorNodeAsset.userData as FlowNodeAsset;
                 if (flowNodeAsset == default) continue;

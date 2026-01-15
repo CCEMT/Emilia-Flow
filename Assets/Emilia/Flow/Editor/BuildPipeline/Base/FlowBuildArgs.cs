@@ -9,14 +9,19 @@ namespace Emilia.Flow.Editor
         public string outputPath;
 
         public bool isGenerateFile;
+        public bool isSaveAsset = true;
+        public bool isRefresh = true;
         public bool updateRunner = true;
+        public Action generateFileCallback;
 
         public FlowBuildArgs(EditorFlowAsset flowAsset, string outputPath, Action<BuildReport> onBuildComplete = null)
         {
             this.flowAsset = flowAsset;
             this.outputPath = outputPath;
             this.onBuildComplete = onBuildComplete;
-            isGenerateFile = true;
+            this.isGenerateFile = true;
+            this.isSaveAsset = true;
+            this.isRefresh = true;
         }
     }
 }

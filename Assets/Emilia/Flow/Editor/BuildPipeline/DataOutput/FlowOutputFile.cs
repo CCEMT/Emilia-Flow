@@ -27,18 +27,28 @@ namespace Emilia.Flow.Editor
             string path = $"{dataPathNoAssets}/{args.outputPath}/{args.flowAsset.name}.bytes";
 
             Task.Run(() => {
-                if (File.Exists(path)) File.Delete(path);
-                byte[] bytes = TagSerializationUtility.IgnoreTagSerializeValue(container.flowGraphAsset, DataFormat.Binary, SerializeTagDefine.DefaultIgnoreTag);
-                File.WriteAllBytes(path, bytes);
-                EditorKit.UnityInvoke(RefreshAssetDatabase);
+
+                try
+                {
+                    if (File.Exists(path)) File.Delete(path);
+                    byte[] bytes = TagSerializationUtility.IgnoreTagSerializeValue(container.flowGraphAsset, DataFormat.Binary, SerializeTagDefine.DefaultIgnoreTag);
+                    File.WriteAllBytes(path, bytes);
+                    EditorApplication.delayCall += RefreshAssetDatabase;
+                }
+                catch (Exception e)
+                {
+                    EditorApplication.delayCall += () => Debug.LogError(e.ToUnityLogString());
+                }
+
             });
 
             onFinished.Invoke();
 
             void RefreshAssetDatabase()
             {
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
+                if (args.isSaveAsset) AssetDatabase.SaveAssets();
+                if (args.isRefresh) AssetDatabase.Refresh();
+                args.generateFileCallback?.Invoke();
             }
 
         }

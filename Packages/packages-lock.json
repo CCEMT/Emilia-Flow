@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.emilia.kit": {
-      "version": "file:com.emilia.kit@74146369ff",
+      "version": "file:com.emilia.kit@8d4921af83",
       "depth": 0,
       "source": "embedded",
       "dependencies": {
@@ -9,7 +9,7 @@
       }
     },
     "com.emilia.node.editor": {
-      "version": "file:com.emilia.node.editor@7d09ccd0d7",
+      "version": "file:com.emilia.node.editor@0214d26785",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

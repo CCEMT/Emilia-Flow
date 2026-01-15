@@ -11,7 +11,6 @@ namespace Emilia.Flow.Editor
     [EditorHandle(typeof(EditorFlowAsset))]
     public class FlowGraphHandle : UniversalGraphHandle
     {
-        private EditorGraphView editorGraphView;
         private EditorFlowAsset editorFlowAsset;
         private EditorFlowRunner debugRunner;
         private List<EditorFlowNodeView> displayNodeViews = new();
@@ -19,7 +18,6 @@ namespace Emilia.Flow.Editor
         public override void Initialize(EditorGraphView graphView)
         {
             base.Initialize(graphView);
-            editorGraphView = graphView;
             editorFlowAsset = graphView.graphAsset as EditorFlowAsset;
 
             graphView.RegisterCallback<GetFlowRunnerEvent>(OnGetFlowRunnerEvent);

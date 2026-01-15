@@ -1,6 +1,7 @@
 ﻿using System;
 using Emilia.DataBuildPipeline.Editor;
 using Emilia.Kit.Editor;
+using UnityEditor;
 
 namespace Emilia.Flow.Editor
 {
@@ -16,7 +17,8 @@ namespace Emilia.Flow.Editor
             flowBuildArgs.flowAsset.cacheEditorByRuntimeIdMap = container.editorByRuntimeMap;
             flowBuildArgs.flowAsset.cacheRuntimeByEditorIdMap = container.runtimeByEditorMap;
 
-            flowBuildArgs.flowAsset.SaveAll();
+            flowBuildArgs.flowAsset.SetDirtyAll();
+            if (flowBuildArgs.isSaveAsset) AssetDatabase.SaveAssets();
 
             onFinished.Invoke();
         }

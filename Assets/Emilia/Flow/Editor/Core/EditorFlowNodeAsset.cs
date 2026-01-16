@@ -46,10 +46,8 @@ namespace Emilia.Flow.Editor
         private Label descriptionLabel;
 
         private bool _editInNode;
+        
         protected override bool editInNode => this._editInNode;
-
-        public override bool canExpanded => false;
-
         public object openScriptObject => this.flowNodeAsset.userData;
 
         public override void Initialize(EditorGraphView graphView, EditorNodeAsset asset)

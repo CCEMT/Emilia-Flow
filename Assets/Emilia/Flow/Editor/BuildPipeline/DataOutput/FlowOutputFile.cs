@@ -46,8 +46,7 @@ namespace Emilia.Flow.Editor
 
             void RefreshAssetDatabase()
             {
-                if (args.isSaveAsset) AssetDatabase.SaveAssets();
-                if (args.isRefresh) AssetDatabase.Refresh();
+                AssetDatabase.ImportAsset(path);
                 args.generateFileCallback?.Invoke();
             }
 

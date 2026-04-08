@@ -9,8 +9,6 @@ namespace Emilia.Flow.Editor
         public string outputPath;
 
         public bool isGenerateFile;
-        public bool isSaveAsset = true;
-        public bool isRefresh = true;
         public bool updateRunner = true;
         public Action generateFileCallback;
 
@@ -20,8 +18,6 @@ namespace Emilia.Flow.Editor
             this.outputPath = outputPath;
             this.onBuildComplete = onBuildComplete;
             this.isGenerateFile = true;
-            this.isSaveAsset = true;
-            this.isRefresh = true;
         }
     }
 }

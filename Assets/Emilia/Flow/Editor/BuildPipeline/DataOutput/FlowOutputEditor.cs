@@ -17,8 +17,7 @@ namespace Emilia.Flow.Editor
             flowBuildArgs.flowAsset.cacheEditorByRuntimeIdMap = container.editorByRuntimeMap;
             flowBuildArgs.flowAsset.cacheRuntimeByEditorIdMap = container.runtimeByEditorMap;
 
-            flowBuildArgs.flowAsset.SetDirtyAll();
-            if (flowBuildArgs.isSaveAsset) AssetDatabase.SaveAssets();
+            flowBuildArgs.flowAsset.OnlySaveAll();
 
             onFinished.Invoke();
         }

@@ -39,7 +39,6 @@ namespace Emilia.Flow.Editor
                 if (runners != null && runners.Count == 1)
                 {
                     this.debugRunner = runners.FirstOrDefault(runner => runner.isActive);
-                    if (debugRunner != null && EditorFlowRunner.nodeMessage.TryGetValue(this.debugRunner.uid, out var queue)) queue.Clear();
                 }
             }
             else
@@ -161,7 +160,7 @@ namespace Emilia.Flow.Editor
         {
             int uid = this.debugRunner.uid;
 
-            EditorFlowRunner.nodeStates.TryGetValue(uid, out List<int> runningNodes);
+            List<int> runningNodes = EditorFlowRunner.nodeStates.GetValueOrDefault(uid);
 
             if (EditorFlowRunner.nodeMessage.TryGetValue(uid, out Queue<EditorFlowDebugPingMessage> messages) == false) return;
 
@@ -174,13 +173,15 @@ namespace Emilia.Flow.Editor
 
                 nodeView.Tips(message.text);
 
-                if (runningNodes.Contains(message.nodeId) == false) nodeView.SetFocus(Color.green, 1500);
+                if (runningNodes == null || runningNodes.Contains(message.nodeId) == false) nodeView.SetFocus(Color.green, 1500);
             }
         }
 
         private void ClearRunner()
         {
             if (this.debugRunner == null) return;
+
+            if (debugRunner != null && EditorFlowRunner.nodeMessage.TryGetValue(this.debugRunner.uid, out var queue)) queue.Clear();
             this.debugRunner = null;
 
             int nodeViewCount = editorGraphView.nodeViews.Count;

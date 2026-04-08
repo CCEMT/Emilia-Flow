@@ -67,8 +67,8 @@ namespace Emilia.Flow.Editor
             for (int i = 0; i < count; i++)
             {
                 EditorFlowRunner runner = runners[i];
-                string itemName = runner.graph.owner.ToString();
-                if (string.IsNullOrEmpty(runner.asset.description) == false) itemName = $"{runner.asset.description}({runner.fileName})";
+                string itemName = ObjectDescriptionUtility.GetDescription(runner.graph.owner);
+                if (string.IsNullOrEmpty(itemName)) itemName = runner.graph.owner.ToString();
                 odinMenu.AddItem(itemName, () => {
                     SetFlowRunnerEvent e = SetFlowRunnerEvent.Create(runner);
                     e.target = graphView;

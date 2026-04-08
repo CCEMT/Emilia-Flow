@@ -58,7 +58,10 @@ namespace Emilia.Flow
             context.sourcePortName = portName;
 
             _stack.Value.Push(context);
-            return new Scope(context);
+
+            Scope scope = ReferencePool.Acquire<Scope>();
+            scope.Init(context);
+            return scope;
         }
 
         void IReference.Clear()
@@ -68,23 +71,36 @@ namespace Emilia.Flow
             sourcePortName = null;
         }
 
-        private class Scope : IDisposable
+        private class Scope : IDisposable, IReference
         {
-            private readonly FlowContext _context;
+            private FlowContext _context;
+            private bool _disposed;
 
-            public Scope(FlowContext context)
+            public void Init(FlowContext context)
             {
                 _context = context;
+                _disposed = false;
             }
 
             public void Dispose()
             {
+                if (_disposed) return;
+                _disposed = true;
+
                 Stack<FlowContext> stack = _stack.Value;
                 if (stack != null && stack.Count > 0)
                 {
                     FlowContext popped = stack.Pop();
                     ReferencePool.Release(popped);
                 }
+
+                ReferencePool.Release(this);
+            }
+
+            void IReference.Clear()
+            {
+                _context = null;
+                _disposed = false;
             }
         }
     }

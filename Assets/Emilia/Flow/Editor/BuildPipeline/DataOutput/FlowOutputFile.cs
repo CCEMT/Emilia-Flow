@@ -25,6 +25,7 @@ namespace Emilia.Flow.Editor
 
             string dataPathNoAssets = Directory.GetParent(Application.dataPath).ToString();
             string path = $"{dataPathNoAssets}/{args.outputPath}/{args.flowAsset.name}.bytes";
+            string unityPath = $"{args.outputPath}/{args.flowAsset.name}.bytes";
 
             Task.Run(() => {
 
@@ -46,7 +47,7 @@ namespace Emilia.Flow.Editor
 
             void RefreshAssetDatabase()
             {
-                AssetDatabase.ImportAsset(path);
+                AssetDatabase.ImportAsset(unityPath);
                 args.generateFileCallback?.Invoke();
             }
 

@@ -18,6 +18,7 @@ namespace Emilia.Flow.Editor
 
             Dictionary<int, FlowEdgeAsset> edgeById = new();
             Dictionary<FlowEdgeAsset, float> priorityByEdge = new();
+            HashSet<string> buildEdgeKeys = new();
 
             int id = 0;
 
@@ -25,44 +26,52 @@ namespace Emilia.Flow.Editor
             for (int i = 0; i < amount; i++)
             {
                 EditorEdgeAsset edge = flowBuildArgs.flowAsset.edges[i];
+                List<EditorLogicalConnection> logicalConnections = ResolveBuildEdgeConnections(flowBuildArgs.flowAsset, edge);
 
-                id++;
+                int connectionCount = logicalConnections.Count;
+                for (int j = 0; j < connectionCount; j++)
+                {
+                    EditorLogicalConnection logicalConnection = logicalConnections[j];
+                    if (logicalConnection.outputNode == null || logicalConnection.inputNode == null) continue;
 
-                EditorNodeAsset editorInputNode = flowBuildArgs.flowAsset.nodeMap.GetValueOrDefault(edge.inputNodeId);
-                EditorNodeAsset editorOutputNode = flowBuildArgs.flowAsset.nodeMap.GetValueOrDefault(edge.outputNodeId);
-                if (editorInputNode == null || editorOutputNode == null) continue;
+                    FlowNodeAsset inputNode = container.nodeMap.GetValueOrDefault(logicalConnection.inputNode.id);
+                    FlowNodeAsset outputNode = container.nodeMap.GetValueOrDefault(logicalConnection.outputNode.id);
+                    if (inputNode == null || outputNode == null) continue;
 
-                FlowNodeAsset inputNode = container.nodeMap.GetValueOrDefault(editorInputNode.id);
-                FlowNodeAsset outputNode = container.nodeMap.GetValueOrDefault(editorOutputNode.id);
-                if (inputNode == null || outputNode == null) continue;
+                    FlowPortAsset inputFlowPortAsset = inputNode.inputPorts.FirstOrDefault((x) => x.portName == logicalConnection.inputPortId);
+                    FlowPortAsset outputFlowPortAsset = outputNode.outputPorts.FirstOrDefault((x) => x.portName == logicalConnection.outputPortId);
+                    if (inputFlowPortAsset == null || outputFlowPortAsset == null) continue;
 
-                FlowPortAsset inputFlowPortAsset = inputNode.inputPorts.FirstOrDefault((x) => x.portName == edge.inputPortId);
-                FlowPortAsset outputFlowPortAsset = outputNode.outputPorts.FirstOrDefault((x) => x.portName == edge.outputPortId);
-                if (inputFlowPortAsset == null || outputFlowPortAsset == null) continue;
+                    if (inputFlowPortAsset.edgeIds is not List<int> inputEdgeIds) continue;
+                    if (outputFlowPortAsset.edgeIds is not List<int> outputEdgeIds) continue;
 
-                float priority = editorInputNode.position.y + editorOutputNode.position.y;
+                    string buildEdgeKey = CreateBuildEdgeKey(logicalConnection);
+                    if (buildEdgeKeys.Add(buildEdgeKey) == false) continue;
 
-                FlowEdgeAsset flowEdge = new(id, inputNode.id, outputNode.id, edge.inputPortId, edge.outputPortId);
-                priorityByEdge.Add(flowEdge, priority);
-                edgeById[id] = flowEdge;
+                    id++;
 
-                List<int> inputEdgeIds = inputFlowPortAsset.edgeIds as List<int>;
-                inputEdgeIds.Add(flowEdge.id);
-                inputEdgeIds.Sort((a, b) => {
-                    float aPriority = priorityByEdge[edgeById[a]];
-                    float bPriority = priorityByEdge[edgeById[b]];
-                    return aPriority.CompareTo(bPriority);
-                });
+                    float priority = logicalConnection.inputNode.position.y + logicalConnection.outputNode.position.y;
 
-                List<int> outputEdgeIds = outputFlowPortAsset.edgeIds as List<int>;
-                outputEdgeIds.Add(flowEdge.id);
-                outputEdgeIds.Sort((a, b) => {
-                    float aPriority = priorityByEdge[edgeById[a]];
-                    float bPriority = priorityByEdge[edgeById[b]];
-                    return aPriority.CompareTo(bPriority);
-                });
+                    FlowEdgeAsset flowEdge = new(id, inputNode.id, outputNode.id, logicalConnection.inputPortId, logicalConnection.outputPortId);
+                    priorityByEdge.Add(flowEdge, priority);
+                    edgeById[id] = flowEdge;
 
-                edges.Add(flowEdge);
+                    inputEdgeIds.Add(flowEdge.id);
+                    inputEdgeIds.Sort((a, b) => {
+                        float aPriority = priorityByEdge[edgeById[a]];
+                        float bPriority = priorityByEdge[edgeById[b]];
+                        return aPriority.CompareTo(bPriority);
+                    });
+
+                    outputEdgeIds.Add(flowEdge.id);
+                    outputEdgeIds.Sort((a, b) => {
+                        float aPriority = priorityByEdge[edgeById[a]];
+                        float bPriority = priorityByEdge[edgeById[b]];
+                        return aPriority.CompareTo(bPriority);
+                    });
+
+                    edges.Add(flowEdge);
+                }
             }
 
             edges.Sort((a, b) => {
@@ -74,6 +83,35 @@ namespace Emilia.Flow.Editor
             container.edges.AddRange(edges);
 
             onFinished.Invoke();
+        }
+
+        private static List<EditorLogicalConnection> ResolveBuildEdgeConnections(EditorGraphAsset graphAsset, EditorEdgeAsset edge)
+        {
+            List<EditorLogicalConnection> result = new();
+
+            EditorNodeAsset outputNode = graphAsset.nodeMap.GetValueOrDefault(edge.outputNodeId);
+            if (outputNode == null) return result;
+
+            List<EditorLogicalConnection> logicalConnections = outputNode.GetLogicalOutputNodes(new HashSet<string>());
+            int count = logicalConnections.Count;
+            for (int i = 0; i < count; i++)
+            {
+                EditorLogicalConnection logicalConnection = logicalConnections[i];
+                if (logicalConnection.outputNode == null) continue;
+                if (logicalConnection.inputNode == null) continue;
+                if (logicalConnection.outputNode.id != edge.outputNodeId) continue;
+                if (logicalConnection.outputPortId != edge.outputPortId) continue;
+                if (string.IsNullOrEmpty(logicalConnection.inputPortId)) continue;
+
+                result.Add(logicalConnection);
+            }
+
+            return result;
+        }
+
+        private static string CreateBuildEdgeKey(EditorLogicalConnection logicalConnection)
+        {
+            return $"{logicalConnection.outputNode.id}|{logicalConnection.inputNode.id}|{logicalConnection.outputPortId}|{logicalConnection.inputPortId}";
         }
     }
 }

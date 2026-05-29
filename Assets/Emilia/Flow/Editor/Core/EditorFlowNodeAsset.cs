@@ -48,6 +48,7 @@ namespace Emilia.Flow.Editor
         private bool _editInNode;
         
         protected override bool editInNode => this._editInNode;
+        protected virtual Type portViewType => typeof(FlowPortView);
         public object openScriptObject => this.flowNodeAsset.userData;
 
         public override void Initialize(EditorGraphView graphView, EditorNodeAsset asset)
@@ -206,7 +207,7 @@ namespace Emilia.Flow.Editor
         {
             EditorPortInfo editorPortInfo = new();
             editorPortInfo.id = id;
-            editorPortInfo.nodePortViewType = typeof(FlowPortView);
+            editorPortInfo.nodePortViewType = portViewType;
             editorPortInfo.displayName = flowPortGenerator.displayName;
             editorPortInfo.direction = direction;
             editorPortInfo.orientation = flowPortGenerator.capacity.HasFlag(FlowPortCapacity.Vertical) ? EditorOrientation.Vertical : EditorOrientation.Horizontal;

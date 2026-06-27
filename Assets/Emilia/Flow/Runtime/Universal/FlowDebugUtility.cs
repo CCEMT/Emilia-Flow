@@ -19,7 +19,7 @@ namespace Emilia.Flow.Emilia
                 if (_editorDebugUtilityResolved) return _editorDebugUtilityType;
 
                 _editorDebugUtilityResolved = true;
-                _editorDebugUtilityType = Assembly.Load("Emilia.Editor")?.GetType("Emilia.Flow.Editor.EditorFlowDebugUtility");
+                _editorDebugUtilityType = Assembly.Load("Emilia.Flow.Editor")?.GetType("Emilia.Flow.Editor.EditorFlowDebugUtility");
 
                 return _editorDebugUtilityType;
             }

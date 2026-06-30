@@ -3,7 +3,8 @@
     "rootNamespace": "Emilia.Flow",
     "references": [
         "GUID:3333d67804e6f9f4ba7ffcc6e72e0d41",
-        "GUID:c456a771040151a47ba4531eaf18d92e"
+        "GUID:c456a771040151a47ba4531eaf18d92e",
+        "GUID:d9cefae20c909d449a8545e0c915e664"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

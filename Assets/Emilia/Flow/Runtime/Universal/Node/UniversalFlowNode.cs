@@ -23,5 +23,11 @@ namespace Emilia.Flow
         {
             this.asset = flowNodeAsset as T;
         }
+
+        protected override void OnDispose()
+        {
+            this.asset = null;
+            base.OnDispose();
+        }
     }
 }

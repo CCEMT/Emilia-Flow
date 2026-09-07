@@ -196,6 +196,31 @@ namespace Emilia.Flow.Editor
                 portAssets.Add(editorPortInfo);
             }
 
+            if (universalFlowNodeAsset is IFlowDynamicOutputPortProvider dynamicOutputPortProvider)
+            {
+                IReadOnlyList<FlowDynamicOutputPortDescriptor> dynamicPorts = dynamicOutputPortProvider.dynamicOutputPorts;
+                int dynamicPortCount = dynamicPorts?.Count ?? 0;
+                for (int i = 0; i < dynamicPortCount; i++)
+                {
+                    FlowDynamicOutputPortDescriptor descriptor = dynamicPorts[i];
+
+                    if (descriptor == null || string.IsNullOrWhiteSpace(descriptor.id)) continue;
+                    if (portAssets.Any(port => port.direction == EditorPortDirection.Output && port.id == descriptor.id)) continue;
+
+                    EditorPortInfo dynamicPortInfo = new();
+                    dynamicPortInfo.id = descriptor.id;
+                    dynamicPortInfo.nodePortViewType = portViewType;
+                    dynamicPortInfo.displayName = string.IsNullOrWhiteSpace(descriptor.displayName) ? descriptor.id : descriptor.displayName;
+                    dynamicPortInfo.direction = EditorPortDirection.Output;
+                    dynamicPortInfo.orientation = EditorOrientation.Horizontal;
+                    dynamicPortInfo.portType = null;
+                    dynamicPortInfo.canMultiConnect = descriptor.canMultiConnect;
+                    dynamicPortInfo.order = descriptor.order;
+                    if (descriptor.hasColor) dynamicPortInfo.color = descriptor.color;
+                    portAssets.Add(dynamicPortInfo);
+                }
+            }
+
             List<string> portIds = portAssets.Select((x) => x.id).ToList();
             FlowShowOrHideUtility.FilterPort(universalFlowNodeAsset, portIds);
             portAssets = portAssets.Where((x) => portIds.Contains(x.id)).ToList();

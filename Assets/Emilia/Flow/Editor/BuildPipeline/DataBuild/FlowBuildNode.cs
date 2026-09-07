@@ -87,6 +87,20 @@ namespace Emilia.Flow.Editor
                     else outputPorts.Add(portAsset);
                 }
 
+                if (copy is IFlowDynamicOutputPortProvider dynamicOutputPortProvider)
+                {
+                    IReadOnlyList<FlowDynamicOutputPortDescriptor> dynamicPorts = dynamicOutputPortProvider.dynamicOutputPorts;
+                    int dynamicPortCount = dynamicPorts?.Count ?? 0;
+                    for (int j = 0; j < dynamicPortCount; j++)
+                    {
+                        FlowDynamicOutputPortDescriptor descriptor = dynamicPorts[j];
+                        if (descriptor == null || string.IsNullOrWhiteSpace(descriptor.id)) continue;
+                        if (outputPorts.Any(port => port.portName == descriptor.id)) continue;
+                        
+                        outputPorts.Add(new FlowPortAsset(descriptor.id, new List<int>()));
+                    }
+                }
+
                 FilterPort(universalFlowNodeAsset, inputPorts);
                 FilterPort(universalFlowNodeAsset, outputPorts);
 

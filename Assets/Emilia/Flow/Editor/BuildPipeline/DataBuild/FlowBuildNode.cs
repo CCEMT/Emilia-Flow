@@ -89,17 +89,15 @@ namespace Emilia.Flow.Editor
 
                 if (copy is IFlowDynamicOutputPortProvider dynamicOutputPortProvider)
                 {
-                    IReadOnlyList<FlowDynamicOutputPortDescriptor> dynamicPorts = dynamicOutputPortProvider.dynamicOutputPorts;
-                    int dynamicPortCount = dynamicPorts?.Count ?? 0;
-                    for (int j = 0; j < dynamicPortCount; j++)
-                    {
-                        FlowDynamicOutputPortDescriptor descriptor = dynamicPorts[j];
-                        if (descriptor == null || string.IsNullOrWhiteSpace(descriptor.id)) continue;
-                        if (outputPorts.Any(port => port.portName == descriptor.id)) continue;
-                        
-                        outputPorts.Add(new FlowPortAsset(descriptor.id, new List<int>()));
-                    }
+                    AddDynamicOutputPorts(outputPorts, dynamicOutputPortProvider.dynamicOutputPorts);
                 }
+
+                if (flowBuildArgs.dynamicOutputPortResolver != null &&
+                    flowBuildArgs.dynamicOutputPortResolver.TryResolveDynamicOutputPorts(
+                        editorNodeAsset,
+                        copy,
+                        out IReadOnlyList<FlowDynamicOutputPortDescriptor> contextualPorts))
+                    AddDynamicOutputPorts(outputPorts, contextualPorts);
 
                 FilterPort(universalFlowNodeAsset, inputPorts);
                 FilterPort(universalFlowNodeAsset, outputPorts);
@@ -122,6 +120,21 @@ namespace Emilia.Flow.Editor
             {
                 FlowPortAsset portAsset = portAssets[i];
                 if (portIds.Contains(portAsset.portName) == false) portAssets.RemoveAt(i);
+            }
+        }
+
+        private static void AddDynamicOutputPorts(
+            List<FlowPortAsset> outputPorts,
+            IReadOnlyList<FlowDynamicOutputPortDescriptor> dynamicPorts)
+        {
+            int count = dynamicPorts?.Count ?? 0;
+            for (int i = 0; i < count; i++)
+            {
+                FlowDynamicOutputPortDescriptor descriptor = dynamicPorts[i];
+                if (descriptor == null || string.IsNullOrWhiteSpace(descriptor.id)) continue;
+                if (outputPorts.Any(port => port.portName == descriptor.id)) continue;
+
+                outputPorts.Add(new FlowPortAsset(descriptor.id, new List<int>()));
             }
         }
     }
